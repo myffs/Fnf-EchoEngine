@@ -1,10 +1,9 @@
 package;
 
-import;
+import Flx.Sprite.Group;
+import Flx.Sprite;
+import Flx.Typed.Group;
 
-FlxSpriteGroup
-FlxSprite
-FlxTypedGroup
 
 new(X:Float = 0, Y:Float = 0, MaxSize:Int = 255)
   directAlpha:Bool = false
