@@ -1,17 +1,14 @@
-## NOTE:
-this IS bit engine, but 2.0, BIT ENGINE IS DEAD, STOP FUCKING USING IT. Use this instead
+## Friday Night Funkin' - Echo Engine
 
-## Welcome to Echo Engine!
+A 2.0 version of [ bit engine ](https://github.com/LilDrippyMyFnf/FNF-BitEnigne)
 
 ## Features
 
-* Similar to bit engine, just a few adding things
-* some psych engine stuff
-* custom stuff
+* Psych Engine Features
+* Bit Engine Features
+* and more!
 
-## Planning to do
+## Creators
 
-- Change LOTS of shit
-- add new things
-- I.CANT.HANDLE.FUCKING.LUA
-- and more....
+* MyFnf - Main Programmer
+* MemeHoovy - Main Bug Fixer
