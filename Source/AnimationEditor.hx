@@ -53,6 +53,3 @@ new(X:Float = 0, Y:Float = 0, MaxSize:Int = 255)
                                                                                                       stamp(Brush:FlxSprite, X:Int = 0, Y:Int = 0):Void
                                                                                                         transformChildren<V>(Function:(T, V) ‑> Void, Value:V):Void
                                                                                                           function(sprite, v:Dynamic) { s.acceleration.x = v; s.makeGraphic(10,10,0xFF000000); }
-
-                                                                                                    
-  
