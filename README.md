@@ -1,11 +1,11 @@
 ## NOTE:
-this IS bit engine,but 2.0,BIT ENGINE IS DEAD,STOP FUCKING USING IT.Use this instead
+this IS bit engine, but 2.0, BIT ENGINE IS DEAD, STOP FUCKING USING IT. Use this instead
 
 ## Welcome to Echo Engine!
 
 ## Features
 
-* Similar to bit engine,just a few adding things
+* Similar to bit engine, just a few adding things
 * some psych engine stuff
 * custom stuff
 
