@@ -2,6 +2,8 @@
 
 A 2.0 version of [ bit engine ](https://github.com/LilDrippyMyFnf/FNF-BitEnigne)
 
+We now have a gamebanana! https://gamebanana.com/mods/417628
+
 ## Installion
 You must have a [ update to date version of haxe. ](https://haxe.org/download/)
 Then,you'll need to follow the fnf source code compilation tutorial,after that you can install LuaJIT
