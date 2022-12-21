@@ -1,8 +1,8 @@
 ## Friday Night Funkin' - Echo Engine
 
-A 2.0 version of [ bit engine ](https://github.com/LilDrippyMyFnf/FNF-BitEnigne)
+A little Psych Engine Addon
 
-We now have a gamebanana! https://gamebanana.com/mods/417628
+join our discord! https://discord.gg/MaCw7gQ8
 
 ## Installion
 You must have a [ update to date version of haxe. ](https://haxe.org/download/)
