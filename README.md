@@ -15,3 +15,5 @@ otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
 ## Creators
 * MyFnf - Main Programmer
 * MemeHoovy - Main Bug Fixer
+* aislanbclaudino - added features to dad battle
+* Slac - Artist
