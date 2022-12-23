@@ -4,7 +4,7 @@ A little Psych Engine Addon
 
 join our discord! https://discord.gg/MaCw7gQ8
 
-## Installion
+## Installation
 You must have a [ update to date version of haxe. ](https://haxe.org/download/)
 Then,you'll need to follow the fnf source code compilation tutorial,after that you can install LuaJIT
 to install LuaJIT copy this:`haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit`on a command prompt/powershell.
