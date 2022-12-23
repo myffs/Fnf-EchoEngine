@@ -84,6 +84,8 @@ class CreditsState extends MusicBeatState
 			['Echo Engine Team'],
       ['MyFnf',           'myfnf',           'Main Programmer of Echo Engine',                 'https://twitter.com/lil_homie47',   '429E9D'],
       ['MemeHoovy',        'memehoovy',       'Main Bug Fixer of Echo Engine',                  'https://twitter.com/meme_hoovy',    'FFFFFF'],
+      ['Slac',              'Slac',            'Main Artist of Echo Engine',             'https://twitter.com/AmSlac',                 '895e3f'],
+      ['aislanbclaudino',    'aislanbclaudino',  'Added some features to dad battle',    'https://twitter.com/AislanClaudino1',       	'567c8e'],
       [''],
       ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
