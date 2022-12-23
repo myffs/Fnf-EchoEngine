@@ -20,4 +20,4 @@ otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
 ## Contributors
 
 * WarlyFarly-Github - MacOS Tester
-* ShadowKnuckles - Concept maker/Added things
+* ShadowKnuckles - Concept makeer/Adding extra features
