@@ -1,3 +1,1 @@
-1.0
-
-idk,someone fucking help
+Just replace this with normal psych files then compuile psych normally
