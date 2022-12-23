@@ -17,3 +17,7 @@ otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
 * MemeHoovy - Main Bug Fixer
 * aislanbclaudino - added features to dad battle
 * Slac - Artist
+## Contributors
+
+* WarlyFarly-Github - MacOS Tester
+* min89xd - Concept maker
