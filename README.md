@@ -91,3 +91,8 @@ haxelib update [libraries above without brackets]
 
 * WarlyFarly-Github - MacOS Tester
 * ShadowKnuckles - Concept makeer/Adding extra features
+
+## CODE
+
+* BeastlyGhost - Legacy Chart Support
+* magnumsrt - Phyton Support
