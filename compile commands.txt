@@ -1,1 +1,1 @@
-Just replace this with normal psych files then compuile psych normally
+Just replace this with normal psych files then compile psych normally
