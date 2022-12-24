@@ -17,8 +17,8 @@
 				0
 			],
 			"anim": "talk",
-			"idle_name": "BF0",
-			"loop_name": "BF LOOP"
+			"idle_name": "fire0",
+			"loop_name": "MEDIAFIRE LOOP"
 		}
 	]
 }
