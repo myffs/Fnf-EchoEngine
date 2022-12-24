@@ -28,7 +28,7 @@ Install Git: https://git-scm.com/download/win
 Install Visual Studio Code: https://code.visualstudio.com
 
 Now install this libraries in a cmd (in order)
-
+```
 haxelib install lime
 
 haxelib install openfl
@@ -79,8 +79,8 @@ haxelib install hxjsonast
 
 haxelib install systools
 
-haxelib update
-
+haxelib update [libraries above without brackets]
+```
 
 ## Creators
 * MyFnf - Main Programmer
