@@ -54,7 +54,7 @@ class ClientPrefs {
 		'botplay' => false,
 		'opponentplay' => false
 	];
-	public static var inputSystem:String = 'Native';
+	public static var inputSystem:String = 'Psych';
 
 	public static var comboOffset:Array<Int> = [0, 0, 0, 0];
 	public static var ratingOffset:Int = 0;

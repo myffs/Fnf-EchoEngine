@@ -4556,21 +4556,22 @@ class PlayState extends MusicBeatState
 			// rewritten inputs???
 			notes.forEachAlive(function(daNote:Note)
 			{
-				// hold note functions
+
+			// hold note functions
+			switch (ClientPrefs.inputSystem)
+			{
 				case 'Psych':
-				switch (ClientPrefs.inputSystem)
-				{
 				if (strumsBlocked[daNote.noteData] != true && daNote.isSustainNote && parsedHoldArray[daNote.noteData] && daNote.canBeHit
 				&& daNote.mustPress && !daNote.tooLate && !daNote.wasGoodHit && !daNote.blockHit) {
 					goodNoteHit(daNote);
 				}
 				case 'Kade Engine':
-					if (daNote.isSustainNote && dataKeyIsPressed(daNote.noteData) && daNote.canBeHit && daNote.mustPress && daNote.susActive)
-					{
-						goodNoteHit(daNote);
-					}
+				if (daNote.isSustainNote && dataKeyIsPressed(daNote.noteData) && daNote.canBeHit && daNote.mustPress && daNote.susActive)
+				{
+					goodNoteHit(daNote);
 				}
-			});
+			}
+		});
 
 			if (parsedHoldArray.contains(true) && !endingSong) {
 				#if ACHIEVEMENTS_ALLOWED
