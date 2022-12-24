@@ -28,32 +28,57 @@ Install Visual Studio Code: https://code.visualstudio.com
 Now install this libraries in a cmd (in order)
 
 haxelib install lime
+
 haxelib install openfl
+
 haxelib install flixel
+
 haxelib install flixel-tools
+
 haxelib run lime setup flixel
+
 haxelib run lime setup
+
 haxelib run flixel-tools setup
+
 haxelib run openfl setup
 
 haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit
+
 haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc
+
 haxelib git linc_lua https://github.com/kevinresol/linc_lua
+
 haxelib install hxCodec
+
 haxelib install hscript
+
 haxelib git faxe https://github.com/ashea-code/faxe
+
 haxelib install newgrounds
+
 haxelib install hxcpp-debug-server
+
 haxelib install HtmlParser
+
 haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
+
 haxelib install tjson
+
 haxelib install random
+
 haxelib install hxp
+
 haxelib install xmlTools
+
 haxelib install hxnodejs
+
 haxelib install hxjsonast
+
 haxelib install systools
+
 haxelib update
+
 
 ## Creators
 * MyFnf - Main Programmer
