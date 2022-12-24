@@ -17,7 +17,6 @@ otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
 
 Just replace this with normal psych files then compile psych normally
 
-
 If you don't now how to compile psych read this
 
 Install Haxe: https://haxe.org/download/
@@ -44,29 +43,12 @@ haxelib install hxCodec
 haxelib install hscript
 haxelib git faxe https://github.com/ashea-code/faxe
 haxelib install newgrounds
-haxelib install nape
-haxelib install nape-haxe4
 haxelib install hxcpp-debug-server
-haxelib install markdown
 haxelib install HtmlParser
 haxelib git hxvm-luajit https://github.com/nebulazorua/hxvm-luajit
-haxelib install json2object
 haxelib install tjson
-haxelib install beanhx
-haxelib install detox
-haxelib install format
-haxelib install hashlink
 haxelib install random
-haxelib install seedyrng
 haxelib install hxp
-haxelib install tink_core
-haxelib install tink_macro
-haxelib install tink_xml
-haxelib install uniontypes
-haxelib install minject
-haxelib install mloader
-haxelib install msignal
-haxelib install selecthxml
 haxelib install xmlTools
 haxelib install hxnodejs
 haxelib install hxjsonast
