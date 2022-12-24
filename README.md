@@ -2,7 +2,7 @@
 
 A little Psych Engine Addon
 
-**THIS ISN'T AN ENTIRE MOD/FORK OF PSYCH ENGINE, DON'T GET CONFUSED.**
+# THIS ISN'T AN ENTIRE MOD/FORK OF PSYCH ENGINE, DON'T GET CONFUSED.
 
 join our discord! https://discord.gg/MaCw7gQ8
 
