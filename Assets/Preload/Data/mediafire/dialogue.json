@@ -1,0 +1,20 @@
+{
+	"dialogue": [
+		{
+			"portrait": "bf",
+			"expression": "confused",
+			"text": "who tf are you???",
+			"boxState": "angry",
+			"speed": 0.05,
+			"sound": ""
+		},
+		{
+			"portrait": "bf",
+			"expression": "excited",
+			"text": "your walls dumbass B)",
+			"boxState": "normal",
+			"speed": 0.05,
+			"sound": ""
+		}
+	]
+}
