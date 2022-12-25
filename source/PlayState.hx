@@ -4468,6 +4468,7 @@ class PlayState extends MusicBeatState
 						callOnLuas('noteMissPress', [key]);
 						health -= 0.20; // kade is evillll
 					}
+				}	
 			}
 		}
 
