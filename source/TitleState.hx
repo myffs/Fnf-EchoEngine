@@ -666,7 +666,7 @@ class TitleState extends MusicBeatState
 					#end
 				case 8:
 					#if ECHO_WATERMARKS
-                    addMoreText('Psych Engine')
+                    addMoreText('Psych Engine');
 					ngSpr.visible = false;
 					pySpr.visible = true;
 					#else
