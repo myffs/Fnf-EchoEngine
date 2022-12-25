@@ -3,6 +3,15 @@ package;
 import Flx.Sprite.Group;
 import Flx.Sprite;
 import Flx.Typed.Group;
+import flixel.FlxG;
+import flixel.FlxState;
+import flixel.ui.FlxButton;
+import flixel.util.FlxColor;
+import flixel.FlxG;
+import flixel.FlxSprite;
+import flixel.FlxState;
+import flixel.util.FlxColor;
+
 
 
 new(X:Float = 0, Y:Float = 0, MaxSize:Int = 255)
@@ -53,3 +62,25 @@ new(X:Float = 0, Y:Float = 0, MaxSize:Int = 255)
                                                                                                       stamp(Brush:FlxSprite, X:Int = 0, Y:Int = 0):Void
                                                                                                         transformChildren<V>(Function:(T, V) ‑> Void, Value:V):Void
                                                                                                           function(sprite, v:Dynamic) { s.acceleration.x = v; s.makeGraphic(10,10,0xFF000000); }
+
+class PlayState extends FlxState
+{
+	override public function create()
+	{
+		bgColor = 0;
+
+super.create();
+
+		var button = new FlxButton(0, 0, "Add KeyFrame", onButtonClicked);
+		button.screenCenter();
+		add(button);
+	}
+
+	function onButtonClicked()
+	{
+		FlxG.camera.flash(FlxColor.var sprite = new FlxSprite();
+		sprite.makeGraphic(128, 64, FlxColor.BLUE);
+		sprite.screenCenter();
+		add(sprite););
+	}
+}
