@@ -62,6 +62,7 @@ class TitleState extends MusicBeatState
 	var credTextShit:Alphabet;
 	var textGroup:FlxGroup;
 	var ngSpr:FlxSprite;
+	var pySpr:FlxSprite;
 	
 	var titleTextColors:Array<FlxColor> = [0xFF33FFFF, 0xFF3333CC];
 	var titleTextAlphas:Array<Float> = [1, .64];
@@ -395,6 +396,14 @@ class TitleState extends MusicBeatState
 		ngSpr.screenCenter(X);
 		ngSpr.antialiasing = ClientPrefs.globalAntialiasing;
 
+		pySpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('psych'));
+		add(pySpr);
+		pySpr.visible = false;
+		pySpr.setGraphicSize(Std.int(pySpr.width * 0.8));
+		pySpr.updateHitbox();
+		pySpr.screenCenter(X);
+		pySpr.antialiasing = ClientPrefs.globalAntialiasing;
+
 		FlxTween.tween(credTextShit, {y: credTextShit.y + 20}, 2.9, {ease: FlxEase.quadInOut, type: PINGPONG});
 
 		if (initialized)
@@ -638,6 +647,7 @@ class TitleState extends MusicBeatState
 					#if ECHO_WATERMARKS
 					addMoreText('MyFNF', 15);
 					addMoreText('MemeHoovy', 15);
+					addMoreText('ShadowKnuckles', 15);
 					#else
 					addMoreText('present');
 					#end
@@ -650,17 +660,25 @@ class TitleState extends MusicBeatState
 				// credTextShit.screenCenter();
 				case 6:
 					#if ECHO_WATERMARKS
-					createCoolText(['Not associated', 'with'], -40);
+					createCoolText(['An addon', 'for'], -40);
 					#else
 					createCoolText(['In association', 'with'], -40);
 					#end
 				case 8:
+					#if ECHO_WATERMARKS
+                    addMoreText('Psych Engine')
+					ngSpr.visible = false;
+					pySpr.visible = true;
+					#else
 					addMoreText('newgrounds', -40);
 					ngSpr.visible = true;
+					pySpr.visible = false;
+					#end
 				// credTextShit.text += '\nNewgrounds';
 				case 9:
 					deleteCoolText();
 					ngSpr.visible = false;
+					pySpr.visible = false;
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
