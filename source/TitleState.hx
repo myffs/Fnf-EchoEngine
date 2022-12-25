@@ -677,8 +677,11 @@ class TitleState extends MusicBeatState
 				// credTextShit.text += '\nNewgrounds';
 				case 9:
 					deleteCoolText();
-					ngSpr.visible = false;
+					#if ECHO_WATERMARKS
 					pySpr.visible = false;
+					#else
+					ngSpr.visible = false;
+					#end
 				// credTextShit.visible = false;
 
 				// credTextShit.text = 'Shoutouts Tom Fulp';
