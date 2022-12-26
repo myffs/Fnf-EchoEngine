@@ -83,4 +83,6 @@ super.create();
 		sprite.screenCenter();
 		add(sprite););
 	}
+	
+	//yes idk how to fix it but heres my tip: check your haxe to other
 }
