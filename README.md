@@ -38,7 +38,7 @@ It will install automatically all the things
 * ShadowKnuckles - Concept makeer/Adding extra features
 * Bambigaming2022 - Engine Tester
 
-## CODE
+## Code
 
 * BeastlyGhost - Legacy Chart Support
 * magnumsrt - Phyton Support
