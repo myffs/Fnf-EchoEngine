@@ -2522,8 +2522,6 @@ class PlayState extends MusicBeatState
 				var floorSus:Int = Math.floor(susLength);
 				var type = 0;
 				if(floorSus > 0) {
-					if (ClientPrefs.inputSystem == 'Kade Engine')
-						swagNote.isParent = true;
 					for (susNote in 0...floorSus+1)
 					{
 						oldNote = unspawnNotes[Std.int(unspawnNotes.length - 1)];
@@ -2548,13 +2546,6 @@ class PlayState extends MusicBeatState
 							{
 								sustainNote.x += FlxG.width / 2 + 25;
 							}
-						}
-						if (ClientPrefs.inputSystem == 'Kade Engine')
-						{ // if fireable ever plays this
-							sustainNote.parent = swagNote;
-							swagNote.childs.push(sustainNote);
-							sustainNote.spotInLine = type;
-							type++;
 						}
 					}
 				}
@@ -4336,9 +4327,6 @@ class PlayState extends MusicBeatState
 
 		if (!cpuControlled && startedCountdown && !paused && key > -1 && (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || ClientPrefs.controllerMode))
 		{
-		    switch (ClientPrefs.inputSystem)
-			{
-			case 'Psych':
 			if(!boyfriend.stunned && generatedMusic && !endingSong)
 			{
 				//more accurate hit time for the ratings?
@@ -4404,76 +4392,9 @@ class PlayState extends MusicBeatState
 				//more accurate hit time for the ratings? part 2 (Now that the calculations are done, go back to the time it was before for not causing a note stutter)
 				Conductor.songPosition = lastTime;
 			}
-			case 'Kade Engine': // 1.8 input btw
-					var canMiss:Bool = !ClientPrefs.ghostTapping;
-
-					if (keysPressed[key])
-					{
-						trace('bro this key already held');
-						return;
-					}
-
-					keysPressed[key] = true;
-
-					closestNotes = [];
-
-					notes.forEachAlive(function(daNote:Note)
-					{
-						if (daNote.canBeHit && daNote.mustPress && !daNote.wasGoodHit)
-							closestNotes.push(daNote);
-					}); // Collect notes that can be hit
-
-					closestNotes.sort((a, b) -> Std.int(a.strumTime - b.strumTime));
-
-					var dataNotes = [];
-					for (i in closestNotes)
-						if (i.noteData == key && !i.isSustainNote)
-							dataNotes.push(i);
-
-					if (dataNotes.length != 0)
-					{
-						var coolNote = null;
-
-						for (i in dataNotes)
-						{
-							coolNote = i;
-							break;
-						}
-
-						if (dataNotes.length > 1) // stacked notes or really close ones
-						{
-							for (i in 0...dataNotes.length)
-							{
-								if (i == 0) // skip the first note
-									continue;
-
-								var note = dataNotes[i];
-
-								if (!note.isSustainNote && ((note.strumTime - coolNote.strumTime) < 2) && note.noteData == key)
-								{
-									trace('found a stacked/really close note ' + (note.strumTime - coolNote.strumTime));
-									// just fuckin remove it since it's a stacked note and shouldn't be there
-									note.kill();
-									notes.remove(note, true);
-									note.destroy();
-								}
-							}
-						}
-
-						goodNoteHit(coolNote);
-					}
-					else if (canMiss && generatedMusic)
-					{
-						noteMissPress(key);
-						callOnLuas('noteMissPress', [key]);
-						health -= 0.20; // kade is evillll
-					}
-				}	
-			}
-		}
 
 			var spr:StrumNote = playerStrums.members[key];
-			if(strumsBlocked[key] != true && spr != null && spr.animation.curAnim.name != 'confirm')
+			if (strumsBlocked[key] != true && spr != null && spr.animation.curAnim.name != 'confirm')
 			{
 				spr.playAnim('pressed');
 				spr.resetAnim = 0;
@@ -4506,8 +4427,6 @@ class PlayState extends MusicBeatState
 				spr.resetAnim = 0;
 			}
 
-			if (ClientPrefs.inputSystem == 'Kade Engine')
-				keysPressed[key] = false;
 			callOnLuas('onKeyRelease', [key]);
 		}
 		//trace('released: ' + controlArray);
@@ -4557,22 +4476,12 @@ class PlayState extends MusicBeatState
 			// rewritten inputs???
 			notes.forEachAlive(function(daNote:Note)
 			{
-
-			// hold note functions
-			switch (ClientPrefs.inputSystem)
-			{
-				case 'Psych':
+				// hold note functions
 				if (strumsBlocked[daNote.noteData] != true && daNote.isSustainNote && parsedHoldArray[daNote.noteData] && daNote.canBeHit
 				&& daNote.mustPress && !daNote.tooLate && !daNote.wasGoodHit && !daNote.blockHit) {
 					goodNoteHit(daNote);
 				}
-				case 'Kade Engine':
-				if (daNote.isSustainNote && dataKeyIsPressed(daNote.noteData) && daNote.canBeHit && daNote.mustPress && daNote.susActive)
-				{
-					goodNoteHit(daNote);
-				}
-			}
-		});
+			});
 
 			if (parsedHoldArray.contains(true) && !endingSong) {
 				#if ACHIEVEMENTS_ALLOWED
@@ -4861,7 +4770,7 @@ class PlayState extends MusicBeatState
 		}
 	}
 
-	private function spawnNoteSplashOnNote(note:Note) {
+	public function spawnNoteSplashOnNote(note:Note) {
 		if(ClientPrefs.noteSplashes && note != null) {
 			var strum:StrumNote = playerStrums.members[note.noteData];
 			if(strum != null) {

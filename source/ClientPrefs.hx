@@ -54,7 +54,6 @@ class ClientPrefs {
 		'botplay' => false,
 		'opponentplay' => false
 	];
-	public static var inputSystem:String = 'Psych';
 
 	public static var comboOffset:Array<Int> = [0, 0, 0, 0];
 	public static var ratingOffset:Int = 0;
@@ -128,7 +127,6 @@ class ClientPrefs {
 		FlxG.save.data.badWindow = badWindow;
 		FlxG.save.data.safeFrames = safeFrames;
 		FlxG.save.data.gameplaySettings = gameplaySettings;
-		FlxG.save.data.inputSystem = inputSystem;
 		FlxG.save.data.controllerMode = controllerMode;
 		FlxG.save.data.hitsoundVolume = hitsoundVolume;
 		FlxG.save.data.pauseMusic = pauseMusic;
@@ -202,9 +200,6 @@ class ClientPrefs {
 		}
 		if(FlxG.save.data.arrowHSV != null) {
 			arrowHSV = FlxG.save.data.arrowHSV;
-		}
-		if (FlxG.save.data.inputSystem != null) {
-		    inputSystem = FlxG.save.data.inputSystem;
 		}
 		if(FlxG.save.data.ghostTapping != null) {
 			ghostTapping = FlxG.save.data.ghostTapping;
