@@ -27,6 +27,7 @@ If you don't now how to compile psych open the file named "yes.bat"
 
 It will install automatically all the things
 
+If you wanna compile the engine,use `lime build windows` to compile it
 
 ## Creators
 * MyFnf - Main Programmer
