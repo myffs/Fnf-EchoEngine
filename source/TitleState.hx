@@ -406,7 +406,7 @@ class TitleState extends MusicBeatState
 		pySpr = new FlxSprite(0, FlxG.height * 0.52).loadGraphic(Paths.image('psych'));
 		add(pySpr);
 		pySpr.visible = false;
-		pySpr.setGraphicSize(Std.int(pySpr.width * 0.8));
+		pySpr.setGraphicSize(Std.int(pySpr.width * 0.7));
 		pySpr.updateHitbox();
 		pySpr.screenCenter(X);
 		pySpr.antialiasing = ClientPrefs.globalAntialiasing;
@@ -673,7 +673,6 @@ class TitleState extends MusicBeatState
 					#end
 				case 8:
 					#if ECHO_WATERMARKS
-                    addMoreText('Psych Engine');
 					ngSpr.visible = false;
 					pySpr.visible = true;
 					#else
