@@ -21,13 +21,11 @@ otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
 
 ## Compile instructions
 
-Just replace this with normal psych files then compile psych normally
+If you wanna compile the engine,use `lime build windows` to compile it
 
-If you don't now how to compile psych open the file named "yes.bat"
+If you don't now how to compile the engine open the file named "yes.bat"
 
 It will install automatically all the things
-
-If you wanna compile the engine,use `lime build windows` to compile it
 
 ## Creators
 * MyFnf - Main Programmer
