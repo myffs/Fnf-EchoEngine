@@ -20,7 +20,16 @@ otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
 
 ## Compile instructions
 
-If you wanna compile the engine,use `lime build windows` to compile it
+If you wanna compile the engine,use 
+```
+@echo off
+echo starting
+lime build windows
+echo its done
+echo now you can use this engine
+pause
+```
+to compile it
 
 If you don't now how to compile the engine open the file named "yes.bat"
 
