@@ -28,7 +28,7 @@ class MasterEditorMenu extends MusicBeatState
 		'Character Editor',
 		'Chart Editor',
 		'BG Align Editor'
-                'Mod Manager'
+                // 'Mod Manager' the fuck is this
 	];
 	private var grpTexts:FlxTypedGroup<Alphabet>;
 	private var directories:Array<String> = [null];
