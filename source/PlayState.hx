@@ -3449,13 +3449,20 @@ class PlayState extends MusicBeatState
 
 				switch(Std.parseInt(value1))
 				{
-					case 1, 2, 3: //enable and target dad
+					case 0, 1, 2, 3: //enable and target dad
 						if(val == 1) //enable
 						{
 							dadbattleBlack.visible = true;
 							dadbattleLight.visible = true;
 							dadbattleSmokes.visible = true;
 							defaultCamZoom += 0.12;
+						}
+						if(val == 0) // disables
+						{
+						   dadbattleBlack.visible = false;
+						   dadbattleLight.visible = false;
+						   defaultCamZoom -= 0.12;
+						   dadbattleSmokes.visible = false;
 						}
 
 						var who:Character = dad;
@@ -3948,7 +3955,7 @@ class PlayState extends MusicBeatState
 		} else {
 			var achieve:String = checkForAchievement(['week1_nomiss', 'week2_nomiss', 'week3_nomiss', 'week4_nomiss',
 				'week5_nomiss', 'week6_nomiss', 'week7_nomiss', 'ur_bad',
-				'ur_good', 'hype', 'two_keys', 'toastie', 'debugger']);
+				'ur_good', 'hype', 'two_keys', 'toastie', 'debugger', 'mediafire_nomiss']);
 
 			if(achieve != null) {
 				startAchievement(achieve);
