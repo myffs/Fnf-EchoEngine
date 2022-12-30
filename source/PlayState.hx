@@ -327,7 +327,6 @@ class PlayState extends MusicBeatState
 
 	override public function create()
 	{
-		//trace('Playback Rate: ' + playbackRate);
 		Paths.clearStoredMemory();
 
 		// for lua
@@ -2254,7 +2253,6 @@ class PlayState extends MusicBeatState
 				callOnLuas('onCountdownTick', [swagCounter]);
 
 				swagCounter += 1;
-				// generateSong('fresh');
 			}, 5);
 		}
 	}
@@ -2882,10 +2880,12 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		/*if (FlxG.keys.justPressed.NINE)
+		if (FlxG.keys.justPressed.NINE)
 		{
-			iconP1.swapOldIcon();
-		}*/
+		     iconP1.swapOldIcon();
+		     trace("icon changed!!");
+		}
+		
 		callOnLuas('onUpdate', [elapsed]);
 
 		switch (curStage)
@@ -3209,7 +3209,6 @@ class PlayState extends MusicBeatState
 					}
 					else //Upscroll
 					{
-						//daNote.y = (strumY - 0.45 * (Conductor.songPosition - daNote.strumTime) * songSpeed);
 						daNote.distance = (-0.45 * (Conductor.songPosition - daNote.strumTime) * songSpeed * daNote.multSpeed);
 					}
 
@@ -3516,6 +3515,11 @@ class PlayState extends MusicBeatState
 				var value:Int = Std.parseInt(value1);
 				if(Math.isNaN(value) || value < 1) value = 1;
 				gfSpeed = value;
+				
+			case 'Glow Effect':
+				var value:Int = Std.parseInt(value1);
+				trace("not finished yet");
+				//phillyGlowGradient.visible = true;
 
 			case 'Philly Glow':
 				var lightId:Int = Std.parseInt(value1);
