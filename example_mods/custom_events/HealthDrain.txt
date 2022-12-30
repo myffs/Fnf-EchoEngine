@@ -1,0 +1,4 @@
+Health drain stuff;
+
+Value 1: How much health to drain when opponent sings.
+Value 2: Lowest Health Possible From Drain. (0.01 recommened)
