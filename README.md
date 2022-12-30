@@ -36,6 +36,7 @@ It will install automatically all the things
 * WarlyFarly-Github - MacOS Tester
 * ShadowKnuckles - Concept makeer/Adding extra features
 * Bambigaming2022 - Engine Tester
+* jmxamongusmodder - bug fixer(?)
 
 ## Code
 
