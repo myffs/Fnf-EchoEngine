@@ -91,6 +91,7 @@ class CreditsState extends MusicBeatState
       ['WarlyFarly-Github',     'warly',         'Main Engine Tester ( MacOS version )',     'https://gamejolt.com/@WarlyFarly_Unity', 'FF0000'],
       ['BambiGaming2022',           'bamb',        'Main Tester of the engine',     'https://github.com/BambiGaming2022',    '00FF00'],
       ['jmxamongusmodder',          'mod',         'Another Bug fixer...',           'https://github.com/jmxamongusmodder',   '0000FF'],
+      ['SuperSonicFanAgain',        'ginger',      'Another Artist',               '',               '964B00'],
       [''],
       ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
