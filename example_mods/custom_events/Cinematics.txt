@@ -1,0 +1,9 @@
+Value 1: Start/End of Cinematic 
+	 Mark this Value with 1 to begin the event
+	or mark this value with 2 to end the event
+
+Value 2: Cinematic Bar Speed
+	 Mark this Value with how fast you would like
+	the bars to move in (Suggested: 0.5)
+	
+	Leave Blank to only fade out the HUD

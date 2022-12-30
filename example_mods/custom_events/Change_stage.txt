@@ -1,0 +1,4 @@
+replace stage layer(also can make a pop up image just fill blank the value 2 and stagelayer transparent by fill blank value 1)
+
+Value 1: new stage layer
+Value 2: old stage layer
