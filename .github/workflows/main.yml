@@ -43,6 +43,8 @@ jobs:
           haxelib install flixel-tools
           haxelib install flixel-ui
           haxelib install flixel-addons
+          haxelib install tjson
+          haxelib install hxjsonast
           haxelib install hxCodec
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit
           haxelib install hscript
@@ -53,7 +55,7 @@ jobs:
       - name: Create Version Tag
         run: echo "${{github.run_id}}" > VERSION
       - name: Compile
-        run: haxelib run lime build Project.xml linux --app-version="4.0.0-${{ github.run_id}}"
+        run: haxelib run lime build linux --app-version="4.0.0-${{ github.run_id}}"
       - name: Publish Artifact
         uses: actions/upload-artifact@v2.2.4
         with:
@@ -82,6 +84,8 @@ jobs:
           haxelib install flixel-tools
           haxelib install flixel-ui
           haxelib install flixel-addons
+          haxelib install tjson
+          haxelib install hxjsonast
           haxelib install hxCodec
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit
           haxelib install hscript
@@ -122,6 +126,8 @@ jobs:
           haxelib install flixel-tools
           haxelib install flixel-ui
           haxelib install flixel-addons
+          haxelib install tjson
+          haxelib install hxjsonast
           haxelib install hxCodec
           haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit
           haxelib install hscript
