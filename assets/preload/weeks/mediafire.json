@@ -1,0 +1,20 @@
+{
+	"songs": [
+		["Mediafire", "dad", [121, 34, 27]]
+	],
+
+	"weekCharacters": [
+		"",
+		"bf",
+		"gf"
+	],
+	"weekBackground": "stage",
+
+	"storyName": "nahmanmediafiresucks",
+	"weekBefore": "week7",
+	"weekName": "eh",
+	"startUnlocked": true,
+
+	"hideStoryMode": true,
+	"hideFreeplay": false
+}
