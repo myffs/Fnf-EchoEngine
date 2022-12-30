@@ -82,13 +82,15 @@ class CreditsState extends MusicBeatState
 
 		var pisspoop:Array<Array<String>> = [ //Name - Icon name - Description - Link - BG Color
 			['Echo Engine Team'],
-      ['MyFnf',           'myfnf',           'Main Programmer of Echo Engine',                 'https://twitter.com/lil_homie47',   '429E9D'],
+      ['MyFnf',           'myfnf',           'Main Programmer of Echo Engine',                 'https://twitter.com/drippyfnf',   '429E9D'],
       ['MemeHoovy',        'memehoovy',       'Main Bug Fixer of Echo Engine',                  'https://twitter.com/meme_hoovy',    'FFFFFF'],
       ['Slac',              'Slac',            'Main Artist of Echo Engine',             'https://twitter.com/AmSlac',                 '895e3f'],
-	  ['ShadowKnuckles',       'shadowknuckles',   'Concept Maker + Extra Features collaber',   'https://twitter.com/freddycapo2',   'FF0000'],
-	  ['aislanbclaudino',    'aislanbclaudino',  'Added some features to dad battle',    'https://twitter.com/AislanClaudino1',       	'567c8e'],
+      ['ShadowKnuckles',       'shadowknuckles',   'Concept Maker + Extra Features collaber',   'https://twitter.com/freddycapo2',   'FF0000'],
+      ['aislanbclaudino',    'aislanbclaudino',  'Added some features to dad battle',    'https://twitter.com/AislanClaudino1',       	'567c8e'],
       ['Engine Contributors'],
       ['WarlyFarly-Github',     'warly',         'Main Engine Tester ( MacOS version )',     'https://gamejolt.com/@WarlyFarly_Unity', 'FF0000'],
+      ['BambiGaming2022',           'bamb',        'Main Tester of the engine',     'https://github.com/BambiGaming2022',    '00FF00'],
+      ['jmxamongusmodder',          'mod',         'Another Bug fixer...',           'https://github.com/jmxamongusmodder',   '0000FF'],
       [''],
       ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
