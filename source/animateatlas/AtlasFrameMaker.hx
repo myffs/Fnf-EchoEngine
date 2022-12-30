@@ -85,5 +85,6 @@ class AtlasFrameMaker extends FlxFramesCollection
 		var daFramez:Array<FlxFrame> = [];
 		var firstPass = true;
 		var frameSize:FlxPoint = new FlxPoint(0, 0);
+		return Array<flixel.graphics.frames.FlxFrame>;
 	}
 }
