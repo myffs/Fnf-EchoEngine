@@ -123,7 +123,7 @@ class TitleState extends MusicBeatState
 
 		curWacky = FlxG.random.getObject(getIntroTextShit());
 
-		// DEBUG BULLSHIT
+		// DEBUG BS
 
 		swagShader = new ColorSwap();
 		super.create();
@@ -499,7 +499,11 @@ class TitleState extends MusicBeatState
 				titleText.color = FlxColor.WHITE;
 				titleText.alpha = 1;
 				
-				if(titleText != null) titleText.animation.play('press');
+				if(titleText != null) { // better null protection i guess
+					titleText.color = FlxColor.WHITE;
+					titleText.alpha = 1;
+					titleText.animation.play('press');
+				};
 
 				FlxG.camera.flash(ClientPrefs.flashing ? FlxColor.WHITE : 0x4CFFFFFF, 1);
 				FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
