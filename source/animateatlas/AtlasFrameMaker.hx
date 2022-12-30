@@ -9,10 +9,8 @@ import haxe.Json;
 import openfl.display.BitmapData;
 import animateatlas.JSONData.AtlasData;
 import animateatlas.JSONData.AnimationData;
-#if desktop
 import animateatlas.displayobject.SpriteAnimationLibrary;
 import animateatlas.displayobject.SpriteMovieClip;
-#end
 import flixel.graphics.FlxGraphic;
 import flixel.graphics.frames.FlxFramesCollection;
 import flixel.graphics.frames.FlxFrame;
@@ -59,12 +57,8 @@ class AtlasFrameMaker extends FlxFramesCollection
 		var atlasData:AtlasData = Json.parse(Paths.getTextFromFile('images/$key/spritemap.json').replace("\uFEFF", ""));
 
 		var graphic:FlxGraphic = Paths.image('$key/spritemap');
-		#if desktop
 		var ss:SpriteAnimationLibrary = new SpriteAnimationLibrary(animationData, atlasData, graphic.bitmap);
 		var t:SpriteMovieClip = ss.createAnimation(noAntialiasing);
-		#else
-		trace("nah");
-		#end
 		if(_excludeArray == null)
 		{
 			_excludeArray = t.getFrameLabels();
@@ -75,11 +69,7 @@ class AtlasFrameMaker extends FlxFramesCollection
 		frameCollection = new FlxFramesCollection(graphic, FlxFrameCollectionType.IMAGE);
 		for(x in _excludeArray)
 		{
-			#if desktop
 			frameArray.push(getFramesArray(t, x));
-			#else
-			trace("nah");
-                        #end
 		}
 
 		for(x in frameArray)
