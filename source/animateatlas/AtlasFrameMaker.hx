@@ -83,8 +83,9 @@ class AtlasFrameMaker extends FlxFramesCollection
 		var sizeInfo:Rectangle = new Rectangle(0, 0);
 		var bitMapArray:Array<BitmapData> = [];
 		var daFramez:Array<FlxFrame> = [];
+		//daFramez.push(frameArray);
 		var firstPass = true;
 		var frameSize:FlxPoint = new FlxPoint(0, 0);
-		return Array<flixel.graphics.frames.FlxFrame>;
+		return daFramez;
 	}
 }
