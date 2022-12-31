@@ -54,10 +54,10 @@ It will install automatically all the things
 
 ## Feature
 
-HTML5 Support
-Press escape on the title menu to exit the game
-Cool notes button in chart editor
-Freeplay song text is centered now like in forest engine (i didnt steal i promise)
-A bit more health when hitting a note, and loosing a bit more health when missing.
-1 More Event
-More Coming Soon
+-HTML5 Support
+-Press escape on the title menu to exit the game
+-Cool notes button in chart editor
+-Freeplay song text is centered now like in forest engine (i didnt steal i promise)
+-A bit more health when hitting a note, and loosing a bit more health when missing.
+-1 More Event
+-More Coming Soon
