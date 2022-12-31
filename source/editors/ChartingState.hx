@@ -91,7 +91,8 @@ class ChartingState extends MusicBeatState
 		['Screen Shake', "Value 1: Camera shake\nValue 2: HUD shake\n\nEvery value works as the following example: \"1, 0.05\".\nThe first number (1) is the duration.\nThe second number (0.05) is the intensity."],
 		['Change Character', "Value 1: Character to change (Dad, BF, GF)\nValue 2: New character's name"],
 		['Change Scroll Speed', "Value 1: Scroll Speed Multiplier (1 is default)\nValue 2: Time it takes to change fully in seconds."],
-		['Set Property', "Value 1: Variable name\nValue 2: New value"]
+		['Set Property', "Value 1: Variable name\nValue 2: New value"],
+		['Glow Effect', "this is used for mediafire song only!"]
 	];
 
 	var _file:FileReference;
@@ -890,6 +891,27 @@ class ChartingState extends MusicBeatState
 
 			updateGrid();
 		});
+		var coolButton:FlxButton = new FlxButton(duetButton.x + 200, duetButton.y - 4, "Try Me Notes", function()
+			{
+				var duetNotes:Array<Array<Dynamic>> = [];
+				for (note in _song.notes[curSec].sectionNotes)
+				{
+					var boob = note[1]%4;
+					boob = 2 - boob + 1;
+					if (note[1] > 3) boob += 4;
+	
+					note[1] = boob;
+					var copiedNote:Array<Dynamic> = [note[0], boob, note[2], boob, note[3]];
+					//duetNotes.push(copiedNote);
+				}
+	
+				for (i in duetNotes){
+				//_song.notes[curSec].sectionNotes.push(i);
+	
+				}
+	
+				updateGrid();
+			});
 
 		tab_group_section.add(new FlxText(stepperBeats.x, stepperBeats.y - 15, 0, 'Beats per Section:'));
 		tab_group_section.add(stepperBeats);
@@ -908,6 +930,7 @@ class ChartingState extends MusicBeatState
 		tab_group_section.add(copyLastButton);
 		tab_group_section.add(duetButton);
 		tab_group_section.add(mirrorButton);
+		tab_group_section.add(coolButton);
 
 		UI_box.addGroup(tab_group_section);
 	}
@@ -1432,6 +1455,7 @@ class ChartingState extends MusicBeatState
 			if (wname == 'section_beats')
 			{
 				_song.notes[curSec].sectionBeats = nums.value;
+				_song.notes[curSec].lengthInSteps = Std.int(nums.value);
 				reloadGridLayer();
 			}
 			else if (wname == 'song_speed')
@@ -2735,10 +2759,11 @@ class ChartingState extends MusicBeatState
 		return spr;
 	}
 
-	private function addSection(sectionBeats:Float = 4):Void
+	private function addSection(sectionBeats:Float = 4, lengthInSteps:Int = 16):Void
 	{
 		var sec:SwagSection = {
 			sectionBeats: sectionBeats,
+			lengthInSteps: lengthInSteps,
 			bpm: _song.bpm,
 			changeBPM: false,
 			mustHitSection: true,
