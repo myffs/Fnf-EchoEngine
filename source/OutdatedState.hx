@@ -25,7 +25,7 @@ class OutdatedState extends MusicBeatState
 
 		warnText = new FlxText(0, 0, FlxG.width,
 			"BRO, why the fuck you playin a   \n
-			outdated version of Echo Engine (" + MainMenuState.psychEngineVersion + "),\n
+			outdated version of Echo Engine (" + MainMenuState.echoEngineVersion + "),\n
 			update it to " + TitleState.updateVersion + "! weirdo!! \n
 			Press ESCAPE to proceed if your weird...\n
 			\n
