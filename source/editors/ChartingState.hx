@@ -892,13 +892,13 @@ class ChartingState extends MusicBeatState
 
 			updateGrid();
 		});
-		var coolButton:FlxButton = new FlxButton(duetButton.x + 100, duetButton.y, "Try Me Notes", function()
+		var coolButton:FlxButton = new FlxButton(duetButton.x + 200, duetButton.y - 4, "Try Me Notes", function()
 			{
 				var duetNotes:Array<Array<Dynamic>> = [];
 				for (note in _song.notes[curSec].sectionNotes)
 				{
 					var boob = note[1]%4;
-					boob = 3 - boob + 1;
+					boob = 2 - boob + 1;
 					if (note[1] > 3) boob += 4;
 	
 					note[1] = boob;
