@@ -1690,10 +1690,16 @@ class PlayState extends MusicBeatState
 		inCutscene = true;
 		var black:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, FlxColor.BLACK);
 		black.scrollFactor.set();
+		#if html5
+		trace("nah");
+		#end
 		add(black);
 
 		var red:FlxSprite = new FlxSprite(-100, -100).makeGraphic(FlxG.width * 2, FlxG.height * 2, 0xFFff1b31);
 		red.scrollFactor.set();
+		#if html5
+		add(red);
+		#end
 
 		var senpaiEvil:FlxSprite = new FlxSprite();
 		senpaiEvil.frames = Paths.getSparrowAtlas('weeb/senpaiCrazy');
@@ -1707,10 +1713,16 @@ class PlayState extends MusicBeatState
 		var songName:String = Paths.formatToSongPath(SONG.song);
 		if (songName == 'roses' || songName == 'thorns')
 		{
+			#if html5
+			remove(red);
+			#end
 			remove(black);
 
 			if (songName == 'thorns')
 			{
+				#if html5
+		        add(black);
+				#end
 				add(red);
 				camHUD.visible = false;
 			}
