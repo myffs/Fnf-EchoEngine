@@ -52,12 +52,15 @@ It will install automatically all the things
 ![image (2)](https://user-images.githubusercontent.com/113801267/209573984-24a08e78-7254-477d-a770-bf4356351a43.png)
 
 
-## Feature
+## Features
 
--HTML5 Support
--Press escape on the title menu to exit the game
--Cool notes button in chart editor
--Freeplay song text is centered now like in forest engine (i didnt steal i promise)
--A bit more health when hitting a note, and loosing a bit more health when missing.
--1 More Event
--More Coming Soon
+A Animation editor
+
+![63a9dff0bc42c (1)](https://user-images.githubusercontent.com/113801267/210151762-cf59b632-fe6d-436d-ac34-bdaaff7cd345.jpg)
+
+Some hard-coded stufff
+
+![63a0ef447815b](https://user-images.githubusercontent.com/113801267/210151775-d1add3b2-cb35-4065-ba59-9e7b299f6c8a.jpg)
+
+More coming soon!
+
