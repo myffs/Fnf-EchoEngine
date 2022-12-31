@@ -20,7 +20,7 @@ otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
 
 ## Compile instructions
 
-If you wanna compile the engine, use `lime build windows` to compile it or go to art and press the first bat, or if you want debug mode use the debug bat.
+If you wanna compile the engine, use `lime build windows` to compile it or go to art and press the first bat, or if you want debug mode use the debug bat or use the html 5 bat if you want to compile for html 5. (MACOS BAT SOON!)
 
 If you don't now how to compile the engine open the file named "yes.bat"
 
@@ -36,7 +36,7 @@ It will install automatically all the things
 ## Contributors
 
 * WarlyFarly-Github - MacOS Tester
-* ShadowKnuckles - Concept makeer/Adding extra features
+* ShadowKnuckles - Concept maker/Adding extra features
 * Bambigaming2022 - Engine Tester
 * jmxamongusmodder - Bug Fixer
 * SuperSonicFanAgain - Another Artist
