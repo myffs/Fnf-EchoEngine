@@ -442,6 +442,7 @@ class TitleState extends MusicBeatState
 	
 	var newTitle:Bool = false;
 	var titleTimer:Float = 0;
+	var pressedEnter:Bool = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
 
 	override function update(elapsed:Float)
 	{
@@ -457,8 +458,6 @@ class TitleState extends MusicBeatState
 				Sys.exit(0);
 			}, false);
 		}
-
-		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
 
 		#if mobile
 		for (touch in FlxG.touches.list)
