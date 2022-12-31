@@ -92,7 +92,7 @@ class CreditsState extends MusicBeatState
       ['BambiGaming2022',           'bamb',        'Main Tester of the engine',     'https://github.com/BambiGaming2022',    '00FF00'],
       ['jmxamongusmodder',          'mod',         'Another Bug fixer...',           'https://github.com/jmxamongusmodder',   '0000FF'],
       ['SuperSonicFanAgain',        'ginger',      'Another Artist',               'https://gamebanana.com/members/1776288',               '964B00'],
-      ['IceTom',                    'ice'            'EX Programmer',             'https://gamebanana.com/members/1875867',  '0000FF'],
+      ['IceTom',                    'ice',           'EX Programmer',             'https://gamebanana.com/members/1875867',  '0000FF'],
       [''],
       ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
