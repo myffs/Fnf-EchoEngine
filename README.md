@@ -40,6 +40,7 @@ It will install automatically all the things
 * Bambigaming2022 - Engine Tester
 * jmxamongusmodder - Bug Fixer
 * SuperSonicFanAgain - Another Artist
+* StefanBETA2008 - CO Programmer
 
 ## Code
 
