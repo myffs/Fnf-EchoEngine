@@ -28,24 +28,25 @@ It will install automatically all the things
 
 ## Creators
 
-* MyFnf - Main Programmer
-* MemeHoovy - Main Bug Fixer
-* aislanbclaudino - added features to dad battle
-* Slac - Artist
+* MyFnf - Main Programmer ![myfnf](https://user-images.githubusercontent.com/113801267/210158210-2bce0473-47f9-4896-944d-a74fe33ebf14.png)
+* MemeHoovy - Main Bug Fixer ![memehoovy](https://user-images.githubusercontent.com/113801267/210158222-33c4c26c-d1b0-46cc-a9bb-3dbfd92487d0.png)
+* aislanbclaudino - added features to dad battle ![Aislanbclaudino](https://user-images.githubusercontent.com/113801267/210158226-632b8036-c2a2-482b-9c88-bc2dbd0b82bf.png)
+* Slac - Artist ![Slac](https://user-images.githubusercontent.com/113801267/210158278-d665cb1a-ea31-47bf-8258-060622dfbd7f.png)
+
 
 ## Contributors
 
-* WarlyFarly-Github - MacOS Tester
-* ShadowKnuckles - Concept maker/Adding extra features
-* Bambigaming2022 - Engine Tester
-* jmxamongusmodder - Bug Fixer
-* SuperSonicFanAgain - Another Artist
-* StefanBETA2008 - CO Programmer
+* WarlyFarly-Github - MacOS Tester ![warly](https://user-images.githubusercontent.com/113801267/210158215-9b2532f7-d16b-4abb-b350-638304bb245d.png)
+* ShadowKnuckles - Concept maker/Adding extra features ![shadowknuckles](https://user-images.githubusercontent.com/113801267/210158233-fb45a9be-2cc5-49af-a478-a8df3bf7c937.png)
+* Bambigaming2022 - Engine Tester ![bamb](https://user-images.githubusercontent.com/113801267/210158234-3ac23819-bd0c-4da5-aa27-69b58b5ed852.png)
+* jmxamongusmodder - Bug Fixer ![mod](https://user-images.githubusercontent.com/113801267/210158236-1dbfb16e-8603-4ec8-934c-5fdda5b2f04b.png)
+* SuperSonicFanAgain - Another Artist ![ginger](https://user-images.githubusercontent.com/113801267/210158245-18967322-bb11-4bc9-86ed-091a3b233605.png)
+* StefanBETA2008 - CO Programmer ![2008](https://user-images.githubusercontent.com/113801267/210158247-bcb8f0b6-5ffc-4346-9c3d-90099ad0ba1f.png)
 
 ## Code
 
-* BeastlyGhost - Legacy Chart Support
-* magnumsrt - Phyton Support
+* BeastlyGhost - Legacy Chart Support ![Untitled80_20221231194043](https://user-images.githubusercontent.com/113801267/210158322-5e2b8453-8565-4a16-87cd-fd61d6d0494c.png)
+
 
 ## In-Game Screenshots
 
