@@ -8,7 +8,7 @@ A little Psych Engine Addon
 
 ### THIS ISN'T AN ENTIRE MOD/FORK OF PSYCH ENGINE, THIS IS MORE OF AN ADDON.
 
-join our discord!https://discord.gg/m6NNz6YV
+join our discord! https://discord.gg/m6NNz6YV
 ## Installation
 You must have a [ update to date version of haxe. ](https://haxe.org/download/)
 Then,you'll need to follow the fnf source code compilation tutorial,after that you can install LuaJIT
