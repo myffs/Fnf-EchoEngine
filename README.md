@@ -47,8 +47,8 @@ It will install automatically all the things
 
 ## Special Thanks
 
-* Shadow Mario - creating psych engine
-
+* Psych Engine Team
+* Funkin' Crew 
 
 ## Code
 
