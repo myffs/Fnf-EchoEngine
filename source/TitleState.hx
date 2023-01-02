@@ -407,7 +407,7 @@ class TitleState extends MusicBeatState
 
 	override function update(elapsed:Float)
 	{
-		var pressedEnter:Bool = controls.ACCEPT != null ? controls.ACCEPT : FlxG.keys.justPressed.ENTER;
+		var pressedEnter:Bool = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
 
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
