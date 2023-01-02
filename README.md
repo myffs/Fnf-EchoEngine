@@ -43,6 +43,7 @@ It will install automatically all the things
 * SuperSonicFanAgain - Another Artist ![ginger](https://user-images.githubusercontent.com/113801267/210158245-18967322-bb11-4bc9-86ed-091a3b233605.png)
 * StefanBETA2008 - CO Programmer ![2008](https://user-images.githubusercontent.com/113801267/210158247-bcb8f0b6-5ffc-4346-9c3d-90099ad0ba1f.png)
 * MMBay64 - His OBESSION with mobile ![64](https://user-images.githubusercontent.com/113801267/210173088-67f4b914-c576-4fdd-b842-fa02fdb3755b.png)
+* MichealJYT - PlayTester / Animator ![Micheal](https://user-images.githubusercontent.com/113801267/210197828-6f058cdc-e8e4-4aef-90ae-87c034bcb651.png)
 
 
 ## Code
