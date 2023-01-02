@@ -2,13 +2,13 @@
 
 ![Untitled58_20221223213728](https://user-images.githubusercontent.com/113801267/209418486-a3782277-29f5-49d6-8396-bde34694e8d1.png)
 
-> art by slac thanks homie!
-
 A little Psych Engine Addon
+
+> logo art by slac thanks bud!!
 
 ### THIS ISN'T AN ENTIRE MOD/FORK OF PSYCH ENGINE, THIS IS MORE OF AN ADDON.
 
-join our discord! https://discord.gg/eF6VXTjK
+join our discord!https://discord.gg/m6NNz6YV
 ## Installation
 You must have a [ update to date version of haxe. ](https://haxe.org/download/)
 Then,you'll need to follow the fnf source code compilation tutorial,after that you can install LuaJIT
