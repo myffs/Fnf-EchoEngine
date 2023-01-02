@@ -47,8 +47,9 @@ It will install automatically all the things
 
 ## Special Thanks
 
-* Psych Engine Team
-* Funkin' Crew 
+* Psych Engine Team ![shadowmario](https://user-images.githubusercontent.com/113801267/210258473-d5a2d21d-1155-4af0-8edc-a42259324b2f.png)
+* Funkin' Crew  ![ninjamuffin99](https://user-images.githubusercontent.com/113801267/210258508-f65f1fc9-56a2-4109-9dc1-087635da6572.png)
+
 
 ## Code
 
