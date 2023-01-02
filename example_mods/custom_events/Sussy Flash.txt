@@ -1,0 +1,4 @@
+Sussy Flash
+
+Value 1: Image Name
+Value 2: Duration
