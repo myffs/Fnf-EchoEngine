@@ -11,7 +11,9 @@ import flixel.text.FlxText;
 
 using StringTools;
 
-class thanks {
+class SpecialThanksState extends MusicBeatState 
+{
+
     public static var thanks:Array<Dynamic> = [ //Name,icon,discription,BG color
     ['Special Thanks'],
     ['Shadow Mario',  'shadowmario', 'Creator of Psych Engine', '000000'],
