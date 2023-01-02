@@ -404,10 +404,11 @@ class TitleState extends MusicBeatState
 	
 	var newTitle:Bool = false;
 	var titleTimer:Float = 0;
-	var pressedEnter:Bool = controls.ACCEPT != null ? controls.ACCEPT : FlxG.keys.justPressed.ENTER;
 
 	override function update(elapsed:Float)
 	{
+		var pressedEnter:Bool = controls.ACCEPT != null ? controls.ACCEPT : FlxG.keys.justPressed.ENTER;
+
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
 		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
