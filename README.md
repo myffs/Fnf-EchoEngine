@@ -39,7 +39,6 @@ It will install automatically all the things
 * WarlyFarly-Github - MacOS Tester ![warly](https://user-images.githubusercontent.com/113801267/210158215-9b2532f7-d16b-4abb-b350-638304bb245d.png)
 * ShadowKnuckles - Concept maker/Adding extra features ![shadowknuckles](https://user-images.githubusercontent.com/113801267/210158233-fb45a9be-2cc5-49af-a478-a8df3bf7c937.png)
 * Bambigaming2022 - Engine Tester ![bamb](https://user-images.githubusercontent.com/113801267/210158234-3ac23819-bd0c-4da5-aa27-69b58b5ed852.png)
-* jmxamongusmodder - Bug Fixer ![mod](https://user-images.githubusercontent.com/113801267/210158236-1dbfb16e-8603-4ec8-934c-5fdda5b2f04b.png)
 * SuperSonicFanAgain - Another Artist ![ginger](https://user-images.githubusercontent.com/113801267/210158245-18967322-bb11-4bc9-86ed-091a3b233605.png)
 * StefanBETA2008 - CO Programmer ![2008](https://user-images.githubusercontent.com/113801267/210158247-bcb8f0b6-5ffc-4346-9c3d-90099ad0ba1f.png)
 * MMBay64 - His OBESSION with mobile ![64](https://user-images.githubusercontent.com/113801267/210173088-67f4b914-c576-4fdd-b842-fa02fdb3755b.png)

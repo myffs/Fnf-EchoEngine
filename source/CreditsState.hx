@@ -90,7 +90,6 @@ class CreditsState extends MusicBeatState
       ['Engine Contributors'],
       ['WarlyFarly-Github',     'warly',         'Main Engine Tester ( MacOS version )',     'https://gamejolt.com/@WarlyFarly_Unity', 'FF0000'],
       ['BambiGaming2022',           'bamb',        'Main Tester of the engine',     'https://github.com/BambiGaming2022',    '00FF00'],
-      ['jmxamongusmodder',          'mod',         'Another Bug fixer...',           'https://github.com/jmxamongusmodder',   '0000FF'],
       ['SuperSonicFanAgain',        'ginger',      'Another Artist',               'https://gamebanana.com/members/1776288',               '964B00'],
       ['IceTom',                    'ice',           'EX Programmer',             'https://gamebanana.com/members/1875867',  '0000FF'],
       ['Exclusive Team Members'],
