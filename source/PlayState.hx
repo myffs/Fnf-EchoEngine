@@ -2910,6 +2910,7 @@ class PlayState extends MusicBeatState
 		}
 
 		// cat mode bs
+		// unfinished atm
 		/*if (catMode){
 			var eventKey:FlxKey = tempKeyShit.keyCode;
 			final keyCodes = [1,2,3,4,5,6,7,8,9];
