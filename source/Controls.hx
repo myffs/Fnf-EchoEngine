@@ -277,10 +277,11 @@ class Controls extends FlxActionSet
 	inline function get_NOTE_DOWN_R()
 		return _note_downR.check();
 
-	public var ACCEPT(get, never):Bool;
+	public var ACCEPT(get, never):Null<Bool>;
 
-	inline function get_ACCEPT()
-		return _accept.check();
+	inline function get_ACCEPT() {
+		return _accept != null ? _accept.check() : null;
+	}
 
 	public var BACK(get, never):Bool;
 

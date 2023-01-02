@@ -404,7 +404,7 @@ class TitleState extends MusicBeatState
 	
 	var newTitle:Bool = false;
 	var titleTimer:Float = 0;
-	var pressedEnter:Bool = FlxG.keys.justPressed.ENTER || controls.ACCEPT;
+	var pressedEnter:Bool = controls.ACCEPT != null ? controls.ACCEPT : FlxG.keys.justPressed.ENTER;
 
 	override function update(elapsed:Float)
 	{
