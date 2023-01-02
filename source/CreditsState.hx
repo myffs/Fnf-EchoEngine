@@ -96,6 +96,7 @@ class CreditsState extends MusicBeatState
       ['Exclusive Team Members'],
       ['StefanBETA2008',    '2008',           'CO Programmer of echo engine',   'https://twitter.com/StefanBETA123', 'FFA500'],
       ['MMBay64',         '64',              'obsessed with mobile port',      'https://github.com/MMbay64',    'FFFFFF'],
+      ['MichealJYT',      'Micheal',          'Play Tester/Animator',         'https://twitter.com/Real_MichaelJYT', 'FFA500'],
       [''],
       ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
