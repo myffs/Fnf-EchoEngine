@@ -325,6 +325,17 @@ class PlayState extends MusicBeatState
 	// stores the last combo score objects in an array
 	public static var lastScore:Array<FlxSprite> = [];
 
+	public var catMode:Bool = false;
+
+	public var catNotes:FlxTypedGroup<Note>;
+
+	private var tempKeyShit:KeyboardEvent;
+
+	public function new(?tempKeyShit:KeyboardEvent){
+		this.tempKeyShit = tempKeyShit;
+		super();
+	}
+
 	override public function create()
 	{
 		Paths.clearStoredMemory();
@@ -388,7 +399,6 @@ class PlayState extends MusicBeatState
 		practiceMode = ClientPrefs.getGameplaySetting('practice', false);
 		cpuControlled = ClientPrefs.getGameplaySetting('botplay', false);
 
-		// var gameCam:FlxCamera = FlxG.camera;
 		camGame = new FlxCamera();
 		camHUD = new FlxCamera();
 		camOther = new FlxCamera();
@@ -398,7 +408,7 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD, false);
 		FlxG.cameras.add(camOther, false);
-		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
+		grpNoteSplashes = new FlxTypedGroup<NoteSplash>(8); // limited it to 8 to prevent lag
 
 		FlxG.cameras.setDefaultDrawTarget(camGame, true);
 		CustomFadeTransition.nextCamera = camOther;
@@ -411,6 +421,8 @@ class PlayState extends MusicBeatState
 
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
+
+		catNotes = new FlxTypedGroup<Note>();
 
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
@@ -2896,7 +2908,36 @@ class PlayState extends MusicBeatState
 		     iconP1.swapOldIcon();
 		     trace("icon changed!!");
 		}
-		
+
+		// cat mode bs
+		/*if (catMode){
+			var eventKey:FlxKey = tempKeyShit.keyCode;
+			final keyCodes = [1,2,3,4,5,6,7,8,9];
+			for (i in 0...keysArray.length) {
+				if (onKeyPress(new KeyboardEvent(KeyboardEvent.KEY_DOWN, true, true, -1, keysArray[i][0]))){
+					notes.forEachAlive(function(daNote:Note){
+						if (daNote.noteData > -1 && daNote.noteData == cast getKeyFromEvent(tempKeyShit.keyCode)) {
+							catNotes.add(daNote);
+						}
+						else return;
+					});
+				}
+
+				if (FlxG.keys.justPressed.THREE){
+					notes.forEachAlive(function(daNote:Note){
+						catNotes.remove(daNote);
+					});
+				}
+
+				if (FlxG.keys.justPressed.FOUR && FlxG.keys.pressed.ZERO){
+					catSortShit(catNotes,false);
+				}
+				else if (FlxG.keys.pressed.ONE){
+					catSortShit(catNotes,true);
+				}
+			}
+		}*/
+
 		callOnLuas('onUpdate', [elapsed]);
 
 		switch (curStage)
@@ -3159,9 +3200,9 @@ class PlayState extends MusicBeatState
 		FlxG.watch.addQuick("stepShit", curStep);
 
 		// RESET = Quick Game Over Screen
-		if (!ClientPrefs.noReset && controls.RESET && canReset && !inCutscene && startedCountdown && !endingSong)
+		if (!ClientPrefs.noReset && controls.RESET && canReset && !inCutscene && startedCountdown && !endingSong && !catMode)
 		{
-			health = 0;
+			doDeathCheck(true);
 			trace("RESET = True");
 		}
 		doDeathCheck();
@@ -3341,6 +3382,10 @@ class PlayState extends MusicBeatState
 		setOnLuas('cameraY', camFollowPos.y);
 		setOnLuas('botPlay', cpuControlled);
 		callOnLuas('onUpdatePost', [elapsed]);
+	}
+
+	inline function catSortShit(piss:FlxTypedGroup<Dynamic>, e:Bool = false){
+		return piss.remove(e);
 	}
 
 	function openPauseMenu()
