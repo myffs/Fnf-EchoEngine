@@ -411,7 +411,6 @@ class TitleState extends MusicBeatState
 
 		if (FlxG.sound.music != null)
 			Conductor.songPosition = FlxG.sound.music.time;
-		// FlxG.watch.addQuick('amp', FlxG.sound.music.amplitude);
 
 		if (FlxG.keys.justPressed.ESCAPE && !pressedEnter)
 		{
@@ -438,11 +437,6 @@ class TitleState extends MusicBeatState
 		{
 			if (gamepad.justPressed.START)
 				pressedEnter = true;
-
-			#if switch
-			if (gamepad.justPressed.B)
-				pressedEnter = true;
-			#end
 		}
 		
 		if (newTitle) {
