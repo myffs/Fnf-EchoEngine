@@ -10,21 +10,20 @@ A little Psych Engine Addon
 
 join our discord! https://discord.gg/m6NNz6YV
 ## Installation
-You must have a [ update to date version of haxe. ](https://haxe.org/download/)
-Then,you'll need to follow the fnf source code compilation tutorial,after that you can install LuaJIT
-to install LuaJIT copy this:`haxelib git linc_luajit https://github.com/nebulazorua/linc_luajit`on a command prompt/powershell.
-So if your lazy as fuck and don't want your mod to be able to run LUA scripts delete "LUA_ALLOWED"line in project.xml.
-If you get a error while running lua, run:`haxelib remove linc_luajit`into command prompt/powershell,and then reinstall luaJIT.
-If you want video support on your mod, simply do:`haxelib install hxCodec` on a Command prompt/PowerShell.
-otherwise, you can delete the "VIDEOS_ALLOWED" Line on Project.xml
+You must have [the most up-to-date version of Haxe](https://haxe.org/download/), seriously, stop using 4.1.5, it misses some stuff.
 
-## Compile instructions
+Open up a Command Prompt/PowerShell or Terminal, type `haxelib install hmm`
 
-If you wanna compile the engine, use `lime build windows` to compile it or go to art and press the first bat, or if you want debug mode use the debug bat or use the html 5 bat if you want to compile for html 5. (MACOS BAT SOON!)
+After it finishes, simply type `haxelib run hmm install` in order to install all the needed libraries for *Psych Engine!*
 
-If you don't now how to compile the engine open the file named "yes.bat"
+If you wanna compile use `lime build windows` or open one of the bat files in the arts folder
+## Customization:
+If you wish to disable things like *Lua Scripts* or *Video Cutscenes*, you can read over to `Project.xml`
 
-It will install automatically all the things
+Inside `Project.xml`, you will find several variables to customize Psych Engine to your liking
+
+To start you off, disabling Videos should be simple, simply Delete the line `"VIDEOS_ALLOWED"` or comment it out by wrapping the line in XML-like comments, like this `<!-- YOUR_LINE_HERE -->`
+same goes for *Lua Scripts*, comment out or delete the line with `LUA_ALLOWED`, this and other customization options are all available within the `Project.xml` file
 
 ## Creators
 
