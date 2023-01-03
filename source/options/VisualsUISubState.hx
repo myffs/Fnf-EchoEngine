@@ -41,6 +41,13 @@ class VisualsUISubState extends BaseOptionsMenu
 			true);
 		addOption(option);
 
+		var option:Option = new Option('Opponent Note Splashes',
+		  'The oponent now have splashes',
+		  'opponentNoteSplashes',
+		  'bool',
+		   false);
+		addOption(option);
+
 		var option:Option = new Option('Hide HUD',
 			'If checked, hides most HUD elements.',
 			'hideHud',
