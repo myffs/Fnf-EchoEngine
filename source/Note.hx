@@ -151,22 +151,22 @@ class Note extends FlxSprite
 					noMissAnimation = true;
 				case 'GF Sing':
 					gfNote = true;
-				case 'CYAN NOTE BOIS':
-					ignoreNote = false;
-					mustPress = true;
-					reloadNote('CYAN');
-					noteSplashTexture = 'HURTnoteSplashes';
-					colorSwap.hue = 0;
-					colorSwap.saturation = 0;
-					colorSwap.brightness = 0;
-					lowPriority = true;
+				//case 'CYAN NOTE BOIS':
+					//ignoreNote = false;
+					//mustPress = true;
+					//reloadNote('CYAN');
+					//noteSplashTexture = 'HURTnoteSplashes';
+					//colorSwap.hue = 0;
+					//colorSwap.saturation = 0;
+					//colorSwap.brightness = 0;
+					//lowPriority = true;
 
-					if(isSustainNote) {
-						missHealth = 0.1;
-					} else {
-						missHealth = 0.3;
-					}
-					hitCausesMiss = false;
+					//if(isSustainNote) {
+						//missHealth = 0.1;
+					//} else {
+						//missHealth = 0.3;
+					//}
+					//hitCausesMiss = false;
 			}
 			noteType = value;
 		}
