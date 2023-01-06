@@ -243,6 +243,11 @@ class WeekData {
 		}
 	}
 
+	public static function formatWeek(week:String, ?directory:String):String {
+		if (directory == null) directory = Paths.currentModDirectory;
+		return ((directory.length > 0) ? '${directory}:' : '') + week;
+	}
+
 	public static function loadTheFirstEnabledMod()
 	{
 		Paths.currentModDirectory = '';
