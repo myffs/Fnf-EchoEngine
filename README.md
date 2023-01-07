@@ -68,9 +68,5 @@ A Animation editor
 
 ![63a9dff0bc42c (1)](https://user-images.githubusercontent.com/113801267/210151762-cf59b632-fe6d-436d-ac34-bdaaff7cd345.jpg)
 
-Some hard-coded stufff
-
-![63a0ef447815b](https://user-images.githubusercontent.com/113801267/210151775-d1add3b2-cb35-4065-ba59-9e7b299f6c8a.jpg)
-
 More coming soon!
 
