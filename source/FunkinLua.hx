@@ -76,7 +76,9 @@ class FunkinLua {
 	public static var hscript:HScript = null;
 	#end
 	
-	public function new(script:String) {
+	public var scriptCode:String;
+	
+	public function new(script:String, ?scriptCode:String) {
 		#if LUA_ALLOWED
 		lua = LuaL.newstate();
 		LuaL.openlibs(lua);
@@ -87,7 +89,11 @@ class FunkinLua {
 
 		//LuaL.dostring(lua, CLENSE);
 		try{
-			var result:Dynamic = LuaL.dofile(lua, script);
+			var result;
+			if(scriptCode != null) 
+				result = LuaL.dostring(lua, scriptCode);
+			else
+				result = LuaL.dofile(lua, script);
 			var resultStr:String = Lua.tostring(lua, result);
 			if(resultStr != null && result != 0) {
 				trace('Error on lua script! ' + resultStr);
@@ -103,6 +109,8 @@ class FunkinLua {
 			trace(e);
 			return;
 		}
+		if (scriptCode != null) 
+			this.scriptCode = scriptCode;
 		scriptName = script;
 		initHaxeModule();
 
@@ -2506,7 +2514,7 @@ class FunkinLua {
 			{
 				var save:FlxSave = new FlxSave();
 				// folder goes unused for flixel 5 users. @BeastlyGhost
-				save.bind(name #if (flixel < "5.0.0"), folder #end);
+				save.bind(name, CoolUtil.getSavePath(folder));
 				PlayState.instance.modchartSaves.set(name, save);
 				return;
 			}

@@ -190,6 +190,11 @@ class Paths
 		return getPath('$key.lua', TEXT, library);
 	}
 
+	inline static public function py(key:String, ?library:String)
+	{
+		return getPath('$key.py', TEXT, library);
+	}
+
 	static public function video(key:String)
 	{
 		#if MODS_ALLOWED

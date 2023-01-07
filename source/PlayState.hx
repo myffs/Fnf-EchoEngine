@@ -61,6 +61,13 @@ import FunkinLua;
 import DialogueBoxPsych;
 import Conductor.Rating;
 
+#if LUA_ALLOWED
+import llua.Lua;
+import llua.LuaL;
+import llua.State;
+import llua.Convert;
+#end
+
 #if !flash 
 import flixel.addons.display.FlxRuntimeShader;
 import openfl.filters.ShaderFilter;
@@ -73,6 +80,10 @@ import sys.io.File;
 
 #if VIDEOS_ALLOWED
 import vlc.MP4Handler;
+#end
+
+#if PYTHON_SCRIPTING
+import pythonUtil.Python;
 #end
 
 using StringTools;
@@ -303,6 +314,8 @@ class PlayState extends MusicBeatState
 	var keysPressed:Array<Bool> = [];
 	var boyfriendIdleTime:Float = 0.0;
 	var boyfriendIdled:Bool = false;
+	var achievementsArray:Array<FunkinLua> = [];
+	var achievementWeeks:Array<String> = [];
 
 	// Lua shit
 	public static var instance:PlayState;
@@ -879,6 +892,68 @@ class PlayState extends MusicBeatState
 		add(luaDebugGroup);
 		#end
 
+		function addAbilityToUnlockAchievements(funkinLua:FunkinLua)
+		{
+			var lua = funkinLua.lua;
+			if (lua != null){
+				Lua_helper.add_callback(lua, "giveAchievement", function(name:String){
+					if (luaArray.contains(funkinLua))
+						throw 'Illegal attempt to unlock ' + name;
+					@:privateAccess
+					if (Achievements.isAchievementUnlocked(name))
+						return "Achievement " + name + " is already unlocked!";
+					if (!Achievements.exists(name))
+						return "Achievement " + name + " does not exist."; 
+					if(instance != null) { 
+						Achievements.unlockAchievement(name);
+						instance.startAchievement(name);
+						ClientPrefs.saveSettings();
+						return "Unlocked achievement " + name + "!";
+					}
+					else return "Instance is null.";
+				});
+
+			}
+		}
+
+		//CUSTOM ACHIVEMENTS
+		#if (MODS_ALLOWED && LUA_ALLOWED && ACHIEVEMENTS_ALLOWED)
+		var luaFiles:Array<String> = Achievements.getModAchievements().copy();
+		if(luaFiles.length > 0)
+		{
+			for(luaFile in luaFiles)
+			{
+				var meta:Achievements.AchievementMeta = try Json.parse(File.getContent(luaFile.substring(0, luaFile.length - 4) + '.json')) catch(e) throw e;
+				if (meta != null)
+				{
+					if (meta.song != null && meta.song.length > 0 && SONG.song.toLowerCase().replace(' ', '-') != meta.song.toLowerCase().replace(' ', '-'))
+						continue;
+
+					var lua = new FunkinLua(luaFile);
+					addAbilityToUnlockAchievements(lua);
+					achievementsArray.push(lua);
+				}
+			}
+		}
+
+		var achievementMetas = Achievements.getModAchievementMetas().copy();
+		for (i in achievementMetas) {
+			if(i.song != null)
+			{
+				if(i.song.length > 0 && SONG.song.toLowerCase().replace(' ', '-') != i.song.toLowerCase().replace(' ', '-'))
+					continue;
+			}
+			if(i.lua_code != null) {
+				var lua = new FunkinLua(null, i.lua_code);
+				addAbilityToUnlockAchievements(lua);
+				achievementsArray.push(lua);
+			}
+			if(i.week_nomiss != null) {
+				achievementWeeks.push(i.week_nomiss + '_nomiss');
+			}
+		}
+		#end
+
 		// "GLOBAL" SCRIPTS
 		#if LUA_ALLOWED
 		var filesPushed:Array<String> = [];
@@ -909,6 +984,34 @@ class PlayState extends MusicBeatState
 		}
 		#end
 
+		#if PYTHON_SCRIPTING
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = [Paths.getPreloadPath('scripts/')];
+
+		#if MODS_ALLOWED
+		foldersToCheck.insert(0, Paths.mods('scripts/'));
+		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
+			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/scripts/'));
+
+		for(mod in Paths.getGlobalMods())
+			foldersToCheck.insert(0, Paths.mods(mod + '/scripts/'));
+		#end
+
+		for (folder in foldersToCheck)
+		{
+			if(FileSystem.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file.endsWith('.py') && !filesPushed.contains(file))
+					{
+	                    Python.doFile(folder + file);
+						filesPushed.push(file);
+					}
+				}
+			}
+		}
+		#end
 
 		// STAGE SCRIPTS
 		#if (MODS_ALLOWED && LUA_ALLOWED)
@@ -1311,6 +1414,35 @@ class PlayState extends MusicBeatState
 					if(file.endsWith('.lua') && !filesPushed.contains(file))
 					{
 						luaArray.push(new FunkinLua(folder + file));
+						filesPushed.push(file);
+					}
+				}
+			}
+		}
+		#end
+
+		#if PYTHON_SCRIPTING
+		var filesPushed:Array<String> = [];
+		var foldersToCheck:Array<String> = [Paths.getPreloadPath('data/' + Paths.formatToSongPath(SONG.song) + '/')];
+
+		#if MODS_ALLOWED
+		foldersToCheck.insert(0, Paths.mods('data/' + Paths.formatToSongPath(SONG.song) + '/'));
+		if(Paths.currentModDirectory != null && Paths.currentModDirectory.length > 0)
+			foldersToCheck.insert(0, Paths.mods(Paths.currentModDirectory + '/data/' + Paths.formatToSongPath(SONG.song) + '/'));
+
+		for(mod in Paths.getGlobalMods())
+			foldersToCheck.insert(0, Paths.mods(mod + '/data/' + Paths.formatToSongPath(SONG.song) + '/' ));// using push instead of insert because these should run after everything else
+		#end
+
+		for (folder in foldersToCheck)
+		{
+			if(FileSystem.exists(folder))
+			{
+				for (file in FileSystem.readDirectory(folder))
+				{
+					if(file == '.py' && !filesPushed.contains(file))
+					{
+	                    Python.doFile(folder + file);
 						filesPushed.push(file);
 					}
 				}
@@ -4041,9 +4173,10 @@ class PlayState extends MusicBeatState
 			var achieve:String = checkForAchievement(['week1_nomiss', 'week2_nomiss', 'week3_nomiss', 'week4_nomiss',
 				'week5_nomiss', 'week6_nomiss', 'week7_nomiss', 'ur_bad',
 				'ur_good', 'hype', 'two_keys', 'toastie', 'debugger', 'mediafire_nomiss']);
+			var customAchieve:String = checkForAchievement(achievementWeeks);
 
-			if(achieve != null) {
-				startAchievement(achieve);
+			if(achieve != null || customAchieve != null) {
+				startAchievement(customAchieve != null ? customAchieve : achieve);
 				return;
 			}
 		}
@@ -5281,6 +5414,8 @@ class PlayState extends MusicBeatState
 				returnVal = cast ret;
 			}
 		}
+		for (i in achievementsArray)
+			i.call(event, args);
 		#end
 		//trace(event, returnVal);
 		return returnVal;
@@ -5292,6 +5427,8 @@ class PlayState extends MusicBeatState
 			luaArray[i].set(variable, arg);
 		}
 		#end
+		for(i in achievementsArray)
+			i.set(variable, arg);
 	}
 
 	function StrumPlayAnim(isDad:Bool, id:Int, time:Float) {
@@ -5367,7 +5504,7 @@ class PlayState extends MusicBeatState
 		var usedPractice:Bool = (ClientPrefs.getGameplaySetting('practice', false) || ClientPrefs.getGameplaySetting('botplay', false));
 		for (i in 0...achievesToCheck.length) {
 			var achievementName:String = achievesToCheck[i];
-			if(!Achievements.isAchievementUnlocked(achievementName) && !cpuControlled) {
+			if(!Achievements.isAchievementUnlocked(achievementName) && !cpuControlled && Achievements.exists(achievementName)) {
 				var unlock:Bool = false;
 				
 				if (achievementName.contains(WeekData.getWeekFileName()) && achievementName.endsWith('nomiss')) // any FC achievements, name should be "weekFileName_nomiss", e.g: "weekd_nomiss";

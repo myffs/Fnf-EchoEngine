@@ -38,6 +38,7 @@
 	<define name="LUA_ALLOWED" if="desktop" />
 	<define name="ACHIEVEMENTS_ALLOWED" />
 	<define name="VIDEOS_ALLOWED" if="web || windows" unless="32bits"/>
+	<define name="PYTHON_SCRIPTING" if="windows" />
 	<define name="PSYCH_WATERMARKS"/> <!-- DELETE THIS TO REMOVE WATERMARKS/DEV NAMES ON TITLE SCREEN -->
 	<define name="TITLE_SCREEN_EASTER_EGG" if="officialBuild"/> <!-- DELETE THE if="officialBuild" for enabling this on an unofficial build -->
 	<define name="CRASH_HANDLER" if="desktop release" />
@@ -97,7 +98,9 @@
 	<assets path="assets/week7"         library="week7"         exclude="*.ogg" if="web"/>
 	<assets path="assets/week7"         library="week7"         exclude="*.mp3" unless="web"/>
 	
-	<assets path="dlls/" rename='' if="windows" />
+	<section if="PYTHON_SCRIPTING">
+	        <assets path="dlls/"                rename='' />
+	</section>
 	
 	<section if="MODS_ALLOWED">
 		<assets path='example_mods' rename='mods' embed='false'/>
