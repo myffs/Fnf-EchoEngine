@@ -3,6 +3,6 @@ function onCreate()
 end
 function onUpdate()		
   if get == 1 then 
-    setTextString("botplayTxt", "WHAT")	
+    setTextString("botplayTxt", "Botplay mode")	
   end
 end
