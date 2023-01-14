@@ -64,9 +64,9 @@ same goes for *Lua Scripts*, comment out or delete the line with `LUA_ALLOWED`, 
 
 ## Features
 
-An Animation editor
+- An Animation editor
 
 ![63a9dff0bc42c (1)](https://user-images.githubusercontent.com/113801267/210151762-cf59b632-fe6d-436d-ac34-bdaaff7cd345.jpg)
 
-More coming soon!
+More editors coming soon
 
