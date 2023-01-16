@@ -60,9 +60,9 @@ import Discord;
 using StringTools;
 
 class FunkinLua {
-	public static var Function_Stop:Dynamic = "##PSYCHLUA_FUNCTIONSTOP";
-	public static var Function_Continue:Dynamic = "##PSYCHLUA_FUNCTIONCONTINUE";
-	public static var Function_StopLua:Dynamic = "##PSYCHLUA_FUNCTIONSTOPLUA";
+	public static var Function_Stop:Dynamic = 1;
+	public static var Function_Continue:Dynamic = 0;
+	public static var Function_StopLua:Dynamic = 2;
 
 	//public var errorHandler:String->Void;
 	#if LUA_ALLOWED
@@ -76,7 +76,9 @@ class FunkinLua {
 	public static var hscript:HScript = null;
 	#end
 	
-	public function new(script:String) {
+	public var scriptCode:String;
+	
+	public function new(script:String, ?scriptCode:String) {
 		#if LUA_ALLOWED
 		lua = LuaL.newstate();
 		LuaL.openlibs(lua);
@@ -87,7 +89,11 @@ class FunkinLua {
 
 		//LuaL.dostring(lua, CLENSE);
 		try{
-			var result:Dynamic = LuaL.dofile(lua, script);
+			var result;
+			if(scriptCode != null) 
+				result = LuaL.dostring(lua, scriptCode);
+			else
+				result = LuaL.dofile(lua, script);
 			var resultStr:String = Lua.tostring(lua, result);
 			if(resultStr != null && result != 0) {
 				trace('Error on lua script! ' + resultStr);
@@ -103,6 +109,8 @@ class FunkinLua {
 			trace(e);
 			return;
 		}
+		if (scriptCode != null) 
+			this.scriptCode = scriptCode;
 		scriptName = script;
 		initHaxeModule();
 

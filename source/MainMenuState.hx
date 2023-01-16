@@ -1,5 +1,7 @@
 package;
 
+import flixel.util.FlxTimer;
+import lime.net.URIParser;
 #if desktop
 import Discord.DiscordClient;
 #end

@@ -15,6 +15,7 @@ class ClientPrefs {
 	public static var flashing:Bool = true;
 	public static var globalAntialiasing:Bool = true;
 	public static var noteSplashes:Bool = true;
+	public static var controllerMode:Bool = false;
 	public static var lowQuality:Bool = false;
 	public static var shaders:Bool = true;
 	public static var framerate:Int = 60;
@@ -86,6 +87,30 @@ class ClientPrefs {
 		'debug_1'		=> [SEVEN],
 		'debug_2'		=> [EIGHT]
 	];
+	public static var CopyKey:Map<String, Array<FlxKey>> = [
+		//Key Bind, Name for ControlsSubState
+		'note_up'		=> [W, UP],
+		'note_left'		=> [A, LEFT],
+		'note_down'		=> [S, DOWN],
+		'note_right'	=> [D, RIGHT],
+		
+		'ui_up'			=> [W, UP],
+		'ui_left'		=> [A, LEFT],
+		'ui_down'		=> [S, DOWN],
+		'ui_right'		=> [D, RIGHT],
+		
+		'accept'		=> [SPACE, ENTER],
+		'back'			=> [BACKSPACE, ESCAPE],
+		'pause'			=> [ENTER, ESCAPE],
+		'reset'			=> [R],
+		
+		'volume_mute'	=> [ZERO],
+		'volume_up'		=> [NUMPADPLUS, PLUS],
+		'volume_down'	=> [NUMPADMINUS, MINUS],
+		
+		'debug_1'		=> [SEVEN],
+		'debug_2'		=> [EIGHT]
+	];
 	public static var gamepadBinds:Map<String, Array<FlxGamepadInputID>> = [
 		'note_up'		=> [DPAD_UP, LEFT_STICK_DIGITAL_UP, RIGHT_STICK_DIGITAL_UP, Y],
 		'note_left'		=> [DPAD_LEFT, LEFT_STICK_DIGITAL_LEFT, RIGHT_STICK_DIGITAL_LEFT, X],
@@ -115,6 +140,7 @@ class ClientPrefs {
 		FlxG.save.data.opponentStrums = opponentStrums;
 		FlxG.save.data.showFPS = showFPS;
 		FlxG.save.data.flashing = flashing;
+		FlxG.save.data.controllerMode = controllerMode;
 		FlxG.save.data.globalAntialiasing = globalAntialiasing;
 		FlxG.save.data.noteSplashes = noteSplashes;
 		FlxG.save.data.lowQuality = lowQuality;
@@ -170,6 +196,9 @@ class ClientPrefs {
 			if(Main.fpsVar != null) {
 				Main.fpsVar.visible = showFPS;
 			}
+		}
+		if(FlxG.save.data.controllerMode != null) {
+			controllerMode = FlxG.save.data.controllerMode;
 		}
 		if(FlxG.save.data.flashing != null) {
 			flashing = FlxG.save.data.flashing;

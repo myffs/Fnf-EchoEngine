@@ -3,6 +3,7 @@ package;
 #if desktop
 import Sys.sleep;
 import discord_rpc.DiscordRpc;
+#end
 
 #if LUA_ALLOWED
 import llua.Lua;
