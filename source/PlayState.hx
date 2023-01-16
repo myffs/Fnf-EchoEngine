@@ -1561,6 +1561,7 @@ class PlayState extends MusicBeatState
         trace("go hop on windows");
 		name = "Ok";
 	}
+	#end
 
 	function startAndEnd()
 	{
