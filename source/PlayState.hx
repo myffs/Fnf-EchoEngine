@@ -329,16 +329,16 @@ class PlayState extends MusicBeatState
 		// for lua
 		instance = this;
 
-		debugKeysChart = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_1'));
-		debugKeysCharacter = ClientPrefs.copyKey(ClientPrefs.keyBinds.get('debug_2'));
+		debugKeysChart = ClientPrefs.keyBinds.get('debug_1');
+		debugKeysCharacter = ClientPrefs.keyBinds.get('debug_2');
 		PauseSubState.songName = null; //Reset to default
 		playbackRate = ClientPrefs.getGameplaySetting('songspeed', 1);
 
 		keysArray = [
-			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_left')),
-			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_down')),
-			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_up')),
-			ClientPrefs.copyKey(ClientPrefs.keyBinds.get('note_right'))
+			ClientPrefs.keyBinds.get('note_left'),
+			ClientPrefs.keyBinds.get('note_down'),
+		    ClientPrefs.keyBinds.get('note_up'),
+			ClientPrefs.keyBinds.get('note_right')
 		];
 
 		controlArray = [
