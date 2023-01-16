@@ -8,9 +8,9 @@ A little Psych Engine Addon
 
 ### THIS ISN'T AN ENTIRE MOD/FORK OF PSYCH ENGINE, THIS IS MORE OF AN ADDON.
 
-join our discord! https://discord.gg/m6NNz6YV
+join our discord! INVITE INVALID, WAIT FOR NEW ONE
 ## Installation
-You must have [the most up-to-date version of Haxe](https://haxe.org/download/), seriously, stop using 4.1.5, it misses some stuff.
+You must have [the most up-to-date version of Haxe](https://haxe.org/download/), seriously, stop using 4.1.5, it misses some stuff. (I suggest 5.0.0 because thats what i use)
 
 Open up a Command Prompt/PowerShell or Terminal, type `haxelib install hmm`
 
