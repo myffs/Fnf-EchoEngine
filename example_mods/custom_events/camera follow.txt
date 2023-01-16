@@ -1,0 +1,1 @@
+the camera will move when the oppenet/player sings

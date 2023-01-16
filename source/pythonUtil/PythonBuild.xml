@@ -6,7 +6,7 @@
 		<compilervalue name="-I" value="${CPP_DIR}/include/" />
 		<compilervalue name="-I" value="${CPP_DIR}/src/" />
 	</files>
-	
+
 	<target id='haxe' tool='linker' toolid='exe'>
 		<lib name='${CPP_DIR}/libs/python3.lib' if='windows'/>
 		<lib name='${CPP_DIR}/libs/python310.lib' if='windows'/>
