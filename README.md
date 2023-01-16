@@ -8,7 +8,7 @@ A little Psych Engine Addon
 
 ### THIS ISN'T AN ENTIRE MOD/FORK OF PSYCH ENGINE, THIS IS MORE OF AN ADDON.
 
-join our discord! INVITE INVALID, WAIT FOR NEW ONE
+join our discord! https://discord.gg/KsgXMAfga6
 ## Installation
 You must have [the most up-to-date version of Haxe](https://haxe.org/download/), seriously, stop using 4.1.5, it misses some stuff. (I suggest 5.0.0 because thats what i use)
 
