@@ -87,7 +87,7 @@ class ClientPrefs {
 		'debug_1'		=> [SEVEN],
 		'debug_2'		=> [EIGHT]
 	];
-	public static var CopyKey:Map<String, Array<FlxKey>> = [
+	public static var copyKey:Map<String, Array<FlxKey>> = [
 		//Key Bind, Name for ControlsSubState
 		'note_up'		=> [W, UP],
 		'note_left'		=> [A, LEFT],
