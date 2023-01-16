@@ -1,0 +1,4 @@
+Add a Checkpoint to the song!
+
+Value 1: Save HP on Checkpoint. (true/false)
+Value 2: Checkpoint Offset. (int/float)

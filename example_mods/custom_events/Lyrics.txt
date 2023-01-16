@@ -1,0 +1,9 @@
+Value 1: The text!!! duhhhh!!!!!!
+Value 2: Color code
+
+example: 
+
+i love dick
+FF0000
+
+result: red "i love dick" text
