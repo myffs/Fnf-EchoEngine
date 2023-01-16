@@ -1,1 +1,3 @@
-Put your achievement icons here. It's name must be same as it's achievement's save tag.Put your achievement json files here
+Put your achievement icons here
+It's a name that must be same as achievement save tag
+So Put your achievement json files here
