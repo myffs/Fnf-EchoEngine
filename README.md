@@ -43,7 +43,7 @@ same goes for *Lua Scripts*, comment out or delete the line with `LUA_ALLOWED`, 
 * MMBay64 - His OBESSION with mobile ![64](https://user-images.githubusercontent.com/113801267/210173088-67f4b914-c576-4fdd-b842-fa02fdb3755b.png)
 * MichealJYT - PlayTester / Animator ![Micheal](https://user-images.githubusercontent.com/113801267/210197877-0ed00c00-b8d1-4596-aba8-7f63d3104bc9.png)
 * CrazyCactus - Primary Artist ( special class ) / Programmer ![Cactus](https://user-images.githubusercontent.com/113801267/210425315-c79c9e8e-d882-402c-9141-0aa9e0c84c29.png)
-* JmxAmogusmodder - primary coder ( special class ) ![babyjelly](https://user-images.githubusercontent.com/80003646/212745309-5cdebede-2239-467c-8d19-d74a084a21b3.png)
+* JmxAmogusmodder - primary coder ( special class )  ![babyjelly](https://user-images.githubusercontent.com/80003646/212745309-5cdebede-2239-467c-8d19-d74a084a21b3.png)
 
 ## Special Thanks
 
