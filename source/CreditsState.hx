@@ -97,7 +97,7 @@ class CreditsState extends MusicBeatState
       ['MMBay64',         '64',              'obsessed with mobile port',      'https://github.com/MMbay64',    'FFFFFF'],
       ['MichealJYT',      'Micheal',          'Play Tester/Animator',         'https://twitter.com/Real_MichaelJYT', 'FFA500'],
       ['CrazyCactus',      'Cactus',         'Primary Artist ( special class )', 'https://scratch.mit.edu/users/-crazy_cactus-/', '0000FF'],
-      ['jmxamougusmodder', 'jelly',     'Primary coder ( special class )', 'https://github.com/JmxAmogusmodder'],
+      ['jmxamougusmodder', 'jelly',     'Um Actually, we arent in kansas anymore', 'https://github.com/JmxAmogusmodder', '0000FF'],
       [''],
       ['Psych Engine Team'],
 			['Shadow Mario',		'shadowmario',		'Main Programmer of Psych Engine',								'https://twitter.com/Shadow_Mario_',	'444444'],
