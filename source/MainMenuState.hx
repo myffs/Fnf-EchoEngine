@@ -264,7 +264,7 @@ class MainMenuState extends MusicBeatState
 				MusicBeatState.switchState(new AchievementsMenuState());
 				
 			case 5:
-				MusicBeatState.switchState(new CreditsState());
+				MusicBeatState.switchState(new AmongCreditsState());
 				
 			case 7:
 				LoadingState.loadAndSwitchState(new options.OptionsState());
