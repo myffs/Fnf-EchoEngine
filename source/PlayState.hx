@@ -4234,7 +4234,38 @@ class PlayState extends MusicBeatState
 		var key:Int = getKeyFromEvent(eventKey);
 		//trace('Pressed: ' + eventKey);
 
-		if (!cpuControlled && startedCountdown && !paused && key > -1 && (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || ClientPrefs.controllerMode))
+		// cat mode bs
+		// unfinished atm
+		// I FORGOT TO FINISHHHHHHHH
+		if (catMode){
+			var eventKey:FlxKey = tempKeyShit.keyCode;
+			final keyCodes = [1,2,3,4,5,6,7,8,9];
+			for (i in 0...keysArray.length) {
+				if (!cpuControlled && startedCountdown && !paused && key > -1 && (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || ClientPrefs.controllerMode)){
+					notes.forEachAlive(function(daNote:Note){
+						if (daNote.noteData > -1 && daNote.noteData == cast getKeyFromEvent(tempKeyShit.keyCode)) {
+							catNotes.add(daNote);
+						}
+						else return;
+					});
+				}
+
+				if (FlxG.keys.justPressed.THREE){
+					notes.forEachAlive(function(daNote:Note){
+						catNotes.remove(daNote);
+					});
+				}
+
+				if (FlxG.keys.justPressed.FOUR && FlxG.keys.pressed.ZERO){
+					catSortShit(catNotes,false);
+				}
+				else if (FlxG.keys.pressed.ONE){
+					catSortShit(catNotes,true);
+				}
+			}
+		}
+
+		if (!cpuControlled && startedCountdown && !paused && key > -1 && (FlxG.keys.checkStatus(eventKey, JUST_PRESSED) || ClientPrefs.controllerMode) && !catMode)
 		{
 			if(!boyfriend.stunned && generatedMusic && !endingSong)
 			{
@@ -4327,7 +4358,7 @@ class PlayState extends MusicBeatState
 	{
 		var eventKey:FlxKey = event.keyCode;
 		var key:Int = getKeyFromEvent(eventKey);
-		if(!cpuControlled && startedCountdown && !paused && key > -1)
+		if(!cpuControlled && startedCountdown && !paused && key > -1 && !catMode)
 		{
 			var spr:StrumNote = playerStrums.members[key];
 			if(spr != null)
@@ -4337,7 +4368,6 @@ class PlayState extends MusicBeatState
 			}
 			callOnLuas('onKeyRelease', [key]);
 		}
-		//trace('released: ' + controlArray);
 	}
 
 	private function getKeyFromEvent(key:FlxKey):Int
