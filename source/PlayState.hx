@@ -323,6 +323,15 @@ class PlayState extends MusicBeatState
 
 	public static var catMode:Bool = false;
 
+	public var catNotes:FlxTypedGroup<Note>;
+
+	private var tempKeyShit:KeyboardEvent;
+
+	public function new(?tempKeyShit:KeyboardEvent){
+		this.tempKeyShit = tempKeyShit;
+		super();
+	}
+
 	override public function create()
 	{
 		//trace('Playback Rate: ' + playbackRate);
@@ -397,7 +406,7 @@ class PlayState extends MusicBeatState
 		FlxG.cameras.reset(camGame);
 		FlxG.cameras.add(camHUD, false);
 		FlxG.cameras.add(camOther, false);
-		grpNoteSplashes = new FlxTypedGroup<NoteSplash>();
+		grpNoteSplashes = new FlxTypedGroup<NoteSplash>(8);
 
 		FlxG.cameras.setDefaultDrawTarget(camGame, true);
 		CustomFadeTransition.nextCamera = camOther;
@@ -410,6 +419,8 @@ class PlayState extends MusicBeatState
 
 		Conductor.mapBPMChanges(SONG);
 		Conductor.changeBPM(SONG.bpm);
+
+		catNotes = new FlxTypedGroup<Note>();		
 
 		#if desktop
 		storyDifficultyText = CoolUtil.difficulties[storyDifficulty];
@@ -3062,9 +3073,9 @@ class PlayState extends MusicBeatState
 		FlxG.watch.addQuick("stepShit", curStep);
 
 		// RESET = Quick Game Over Screen
-		if (!ClientPrefs.noReset && controls.RESET && canReset && !inCutscene && startedCountdown && !endingSong)
+		if (!ClientPrefs.noReset && controls.RESET && canReset && !inCutscene && startedCountdown && !endingSong && !catMode)
 		{
-			health = 0;
+			doDeathCheck(true);
 			trace("RESET = True");
 		}
 		doDeathCheck();
