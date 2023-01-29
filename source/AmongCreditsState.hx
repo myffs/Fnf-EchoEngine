@@ -13,7 +13,7 @@ class AmongCreditsState extends MusicBeatState
         //PORTRAITS ARE STORED IN SHARED/CREDITS/PORTRAITS. MAKE SURE TO ADD ONE TO ADVOID CRASHES. COPY GEM AND EDIT YOUR COPY TO MAKE YOUR OWN PORTRAIT. THANK YOU! -Jellyburn
         ['Jellyburn',		'gem',	    'we arent in kansas anymore.',	'https://www.youtube.com/watch?v=Fx2PXKDFIWM'],
 	['Memehoovy',		'thales',	    'hoi im a meme and uh im a memer and a sloth',	'https://www.youtube.com/watch?v=xe005d1kAMc']
-        ['MyFNF',		'patg',	    'no this is MYFNF',	'https://www.youtube.com/watch?v=dvNvmTGv40k']
+        ['MyFNF',		'pagt',	    'no this is MYFNF',	'https://www.youtube.com/watch?v=dvNvmTGv40k']
     ];
 
     var nameText:FlxText;
@@ -30,7 +30,7 @@ class AmongCreditsState extends MusicBeatState
 
     var portrait:FlxSprite;
 
-    var mole:FlxSprite; //hey pip :]
+    var mole:FlxSprite; //hey mol :]
 
     private var camFollowPos:FlxObject;
 
