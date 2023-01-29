@@ -12,7 +12,7 @@ class AmongCreditsState extends MusicBeatState
     private static var amongCreditsStuff:Array<Dynamic> = [ //Sticky Note Name - Portrait Name - Description - Link
         //PORTRAITS ARE STORED IN SHARED/CREDITS/PORTRAITS. MAKE SURE TO ADD ONE TO ADVOID CRASHES. COPY GEM AND EDIT YOUR COPY TO MAKE YOUR OWN PORTRAIT. THANK YOU! -Jellyburn
         ['Jellyburn',		'gem',	    'we arent in kansas anymore.',	'https://www.youtube.com/watch?v=Fx2PXKDFIWM'],
-	['Memehoovy',		'thales',	    'words words words punchline',	'https://www.youtube.com/watch?v=xe005d1kAMc']
+	['Memehoovy',		'thales',	    'words words words punchline',	'https://www.youtube.com/watch?v=xe005d1kAMc'],
         ['MyFNF',		'pagt',	    'no this is MYFNF',	'https://www.youtube.com/watch?v=dvNvmTGv40k']
     ];
 
