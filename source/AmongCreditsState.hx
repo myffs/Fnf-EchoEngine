@@ -11,7 +11,9 @@ class AmongCreditsState extends MusicBeatState
 {
     private static var amongCreditsStuff:Array<Dynamic> = [ //Sticky Note Name - Portrait Name - Description - Link
         //PORTRAITS ARE STORED IN SHARED/CREDITS/PORTRAITS. MAKE SURE TO ADD ONE TO ADVOID CRASHES. COPY GEM AND EDIT YOUR COPY TO MAKE YOUR OWN PORTRAIT. THANK YOU! -Jellyburn
-        ['Jellyburn',		'gem',	    'we arent in kansas anymore.',	'https://www.youtube.com/watch?v=Fx2PXKDFIWM']
+        ['Jellyburn',		'gem',	    'we arent in kansas anymore.',	'https://www.youtube.com/watch?v=Fx2PXKDFIWM'],
+	['Memehoovy',		'thales',	    'hoi im a meme and uh im a memer and a sloth',	'https://www.youtube.com/watch?v=xe005d1kAMc']
+        ['MyFNF',		'patg',	    'no this is MYFNF',	'https://www.youtube.com/watch?v=dvNvmTGv40k']
     ];
 
     var nameText:FlxText;
@@ -64,6 +66,7 @@ class AmongCreditsState extends MusicBeatState
         lamp = new FlxSprite(0, -50).loadGraphic(Paths.image('credits/lamp', 'shared'));
 		lamp.antialiasing = true;
         lamp.x = (FlxG.width / 2)  - (lamp.width / 2);
+	        lamp.visible = true;
 		add(lamp);
 
         lamplight = new FlxSprite(0, 50).loadGraphic(Paths.image('credits/lamplight', 'shared'));
@@ -71,6 +74,7 @@ class AmongCreditsState extends MusicBeatState
         lamplight.x = (FlxG.width / 2)  - (lamplight.width / 2);
         lamplight.blend = ADD;
         lamplight.alpha = 0.2;
+	     lamplight.visible = true;
 		add(lamplight);
 
         tree1 = new FlxSprite(-400, 0).loadGraphic(Paths.image('credits/tree', 'shared'));
@@ -104,8 +108,8 @@ class AmongCreditsState extends MusicBeatState
     {
         super.update(elapsed);
 
-        if (amongCreditsStuff[curDesc][1] == 'pip'){ mole.visible = true; }
-        else{ mole.visible = false; }
+        if (amongCreditsStuff[curDesc][1] == 'mol') { mole.visible = true; tree2.visible = false; tree1.visible = true; }
+        else{ mole.visible = false; tree2.visible = true; tree1.visible = false; }
      
 		var leftP = controls.UI_LEFT_P;
 		var rightP = controls.UI_RIGHT_P;
@@ -144,10 +148,10 @@ class AmongCreditsState extends MusicBeatState
         if(curDesc <= 0)
         {
             curDesc = 0;
-            tree1.visible = true;
+            tree1.visible = false;
         }
         else
-            tree1.visible = false;
+            tree1.visible = true;
 
         nameText.text = amongCreditsStuff[curDesc][0];
 
