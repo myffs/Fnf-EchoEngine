@@ -381,7 +381,6 @@ class NativeAudioSource
 			{
 				AL.sourceRewind(handle);
 				if (playing) AL.sourcePlay(handle);
-				// AL.sourcef (handle, AL.SEC_OFFSET, (value + parent.offset) / 1000);
 
 				var secondOffset = (value + parent.offset) / 1000;
 				var totalSeconds = samples / parent.buffer.sampleRate;
@@ -421,24 +420,15 @@ class NativeAudioSource
 		return value;
 	}
 
-	public function getGain():Float
+	inline public function getGain():Float
 	{
-		if (handle != null)
-		{
-			return AL.getSourcef(handle, AL.GAIN);
-		}
-		else
-		{
-			return 1;
-		}
+		return (handle != null) ? AL.getSourcef(handle, AL.GAIN) : 1;
 	}
 
-	public function setGain(value:Float):Float
+	inline public function setGain(value:Float):Float
 	{
 		if (handle != null)
-		{
 			AL.sourcef(handle, AL.GAIN, value);
-		}
 
 		return value;
 	}
@@ -446,9 +436,7 @@ class NativeAudioSource
 	public function getLength():Int
 	{
 		if (length != null)
-		{
 			return length;
-		}
 
 		return Std.int(samples / parent.buffer.sampleRate * 1000) - parent.offset;
 	}
@@ -474,29 +462,22 @@ class NativeAudioSource
 		return length = value;
 	}
 
-	public function getLoops():Int
+	inline public function getLoops():Int
 	{
 		return loops;
 	}
 
-	public function setLoops(value:Int):Int
+	inline public function setLoops(value:Int):Int
 	{
 		return loops = value;
 	}
 
-	public function getPitch():Float
+	inline public function getPitch():Float
 	{
-		if (handle != null)
-		{
-			return AL.getSourcef(handle, AL.PITCH);
-		}
-		else
-		{
-			return 1;
-		}
+		return (handle != null) ? AL.getSourcef(handle, AL.PITCH) : 1;
 	}
 
-	public function setPitch(value:Float):Float
+	inline public function setPitch(value:Float):Float
 	{
 		if (playing && value != getPitch())
 		{
