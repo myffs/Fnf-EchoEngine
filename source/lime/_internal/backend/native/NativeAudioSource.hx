@@ -33,7 +33,8 @@ class NativeAudioSource
 	private var format:Int;
 	private var handle:ALSource;
 	private var length:Null<Int>;
-	private var loops:Int;
+	@:isVar
+	private var loops(get, set):Int;
 	private var parent:AudioSource;
 	private var playing:Bool;
 	private var position:Vector4;
@@ -141,38 +142,7 @@ class NativeAudioSource
 
 	public function play():Void
 	{
-		/*var pitch:Float = AL.getSourcef (handle, AL.PITCH);
-			trace(pitch);
-			AL.sourcef (handle, AL.PITCH, pitch*0.9);
-			pitch = AL.getSourcef (handle, AL.PITCH);
-			trace(pitch); */
-		/*var pos = getPosition();
-			trace(AL.DISTANCE_MODEL);
-			AL.distanceModel(AL.INVERSE_DISTANCE);
-			trace(AL.DISTANCE_MODEL);
-			AL.sourcef(handle, AL.ROLLOFF_FACTOR, 5);
-			setPosition(new Vector4(10, 10, -100));
-			pos = getPosition();
-			trace(pos); */
-		/*var filter = AL.createFilter();
-			trace(AL.getErrorString());
-
-			AL.filteri(filter, AL.FILTER_TYPE, AL.FILTER_LOWPASS);
-			trace(AL.getErrorString());
-
-			AL.filterf(filter, AL.LOWPASS_GAIN, 0.5);
-			trace(AL.getErrorString());
-
-			AL.filterf(filter, AL.LOWPASS_GAINHF, 0.5);
-			trace(AL.getErrorString());
-
-			AL.sourcei(handle, AL.DIRECT_FILTER, filter);
-			trace(AL.getErrorString()); */
-
-		if (playing || handle == null)
-		{
-			return;
-		}
+		if (playing || handle == null) return;
 
 		playing = true;
 
@@ -396,12 +366,6 @@ class NativeAudioSource
 
 	public function setCurrentTime(value:Int):Int
 	{
-		// `setCurrentTime()` has side effects and is never safe to skip.
-		/* if (value == getCurrentTime())
-		{
-			return value;
-		} */
-
 		if (handle != null)
 		{
 			if (stream)
@@ -511,29 +475,22 @@ class NativeAudioSource
 		return length = value;
 	}
 
-	public function getLoops():Int
+	inline private function get_loops():Int
 	{
 		return loops;
 	}
 
-	public function setLoops(value:Int):Int
+	inline private function set_loops(value:Int):Int
 	{
 		return loops = value;
 	}
 
-	public function getPitch():Float
+	inline public function getPitch():Float
 	{
-		if (handle != null)
-		{
-			return AL.getSourcef(handle, AL.PITCH);
-		}
-		else
-		{
-			return 1;
-		}
+		return (handle != null) ? AL.getSourcef(handle, AL.PITCH) : 1;
 	}
 
-	public function setPitch(value:Float):Float
+	inline public function setPitch(value:Float):Float
 	{
 		if (playing && value != getPitch())
 		{
