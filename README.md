@@ -4,8 +4,6 @@
 
 A little Psych Engine Addon
 
-> logo art by slac thanks bud!!
-
 ### THIS ISN'T AN ENTIRE MOD/FORK OF PSYCH ENGINE, THIS IS MORE OF AN ADDON.
 
 join our discord! https://discord.gg/KsgXMAfga6
