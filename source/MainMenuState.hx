@@ -27,8 +27,8 @@ using StringTools;
 
 class MainMenuState extends MusicBeatState
 {
-	public static final psychEngineVersion:String = '0.6.3'; //This is also used for Discord RPC
-	public static final echoEngineVersion:String = '0.4.2'; //yeah baby
+	public static final psychEngineVersion:String = '0.6.3'; // This is also used for Discord RPC
+	public static final echoEngineVersion:String = '0.4.2'; // yeah baby
 	public static var curSelected:Int = 0;
 
 	var menuItems:FlxTypedGroup<FlxSprite>;
@@ -39,9 +39,8 @@ class MainMenuState extends MusicBeatState
 	var mods:FlxSprite;
 	var awards:FlxSprite;
 	var credits:FlxSprite;
-	var donate:FlxSprite;
 	var options:FlxSprite;
-	
+
 	var optionShit:Array<String> = [
 		'story_mode',
 		'freeplay',
@@ -106,15 +105,10 @@ class MainMenuState extends MusicBeatState
 		magenta.antialiasing = ClientPrefs.globalAntialiasing;
 		magenta.color = 0xFFfd719b;
 		add(magenta);
-		
-		// magenta.scrollFactor.set();
 
 		var scale:Float = 1;
-		/*if(optionShit.length > 6) {
-			scale = 6 / optionShit.length;
-		}*/
 
-				storyMode = new FlxSprite(10, -280);
+		storyMode = new FlxSprite(10, -280);
 		storyMode.frames = Paths.getSparrowAtlas("mainmenu/menu_story_mode");
 		storyMode.animation.addByPrefix("idle", "story_mode basic", 24, true);
 		storyMode.animation.addByPrefix("selected", "story_mode white", 24, true);
@@ -159,15 +153,6 @@ class MainMenuState extends MusicBeatState
 		credits.antialiasing = ClientPrefs.globalAntialiasing;
 		add(credits);
 
-		donate = new FlxSprite(10, 420);
-		donate.frames = Paths.getSparrowAtlas("mainmenu/menu_donate");
-		donate.animation.addByPrefix("idle", "donate basic", 24, true);
-		donate.animation.addByPrefix("selected", "donate white", 24, true);
-		donate.animation.play("idle");
-		donate.scrollFactor.set(0, 1);
-		donate.antialiasing = ClientPrefs.globalAntialiasing;
-		//add(donate);
-
 		options = new FlxSprite(10, 560);
 		options.frames = Paths.getSparrowAtlas("mainmenu/menu_options");
 		options.animation.addByPrefix("idle", "options basic", 24, true);
@@ -200,9 +185,11 @@ class MainMenuState extends MusicBeatState
 		#if ACHIEVEMENTS_ALLOWED
 		Achievements.loadAchievements();
 		var leDate = Date.now();
-		if (leDate.getDay() == 5 && leDate.getHours() >= 18) {
+		if (leDate.getDay() == 5 && leDate.getHours() >= 18)
+		{
 			var achieveID:Int = Achievements.getAchievementIndex('friday_night_play');
-			if(!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2])) { //It's a friday night. WEEEEEEEEEEEEEEEEEE
+			if (!Achievements.isAchievementUnlocked(Achievements.achievementsStuff[achieveID][2]))
+			{ // It's a friday night. WEEEEEEEEEEEEEEEEEE
 				Achievements.achievementsMap.set(Achievements.achievementsStuff[achieveID][2], true);
 				giveAchievement();
 				ClientPrefs.saveSettings();
@@ -215,7 +202,8 @@ class MainMenuState extends MusicBeatState
 
 	#if ACHIEVEMENTS_ALLOWED
 	// Unlocks "Freaky on a Friday Night" achievement
-	function giveAchievement() {
+	function giveAchievement()
+	{
 		add(new AchievementObject('friday_night_play', camAchievement));
 		FlxG.sound.play(Paths.sound('confirmMenu'), 0.7);
 		trace('Giving achievement "friday_night_play"');
@@ -240,7 +228,6 @@ class MainMenuState extends MusicBeatState
 				MusicBeatState.switchState(new CreditsState());
 			case 7:
 				LoadingState.loadAndSwitchState(new options.OptionsState());
-				
 		}
 	}
 
@@ -255,23 +242,22 @@ class MainMenuState extends MusicBeatState
 			case 2:
 				FlxTween.tween(freeplay.scale, {x: freeplay.scale.x + 2, y: freeplay.scale.y + 2}, 0.33, {ease: FlxEase.circIn, onComplete: switchState});
 				FlxTween.tween(FlxG.camera, {zoom: 2}, 0.33, {ease: FlxEase.circIn});
-					
+
 			case 3:
 				FlxTween.tween(mods.scale, {x: mods.scale.x + 2, y: mods.scale.y + 2}, 0.33, {ease: FlxEase.circIn, onComplete: switchState});
 				FlxTween.tween(FlxG.camera, {zoom: 2}, 0.33, {ease: FlxEase.circIn});
-				
+
 			case 4:
 				FlxTween.tween(awards.scale, {x: awards.scale.x + 2, y: awards.scale.y + 2}, 0.33, {ease: FlxEase.circIn, onComplete: switchState});
 				FlxTween.tween(FlxG.camera, {zoom: 2}, 0.33, {ease: FlxEase.circIn});
-				
+
 			case 5:
 				FlxTween.tween(credits.scale, {x: credits.scale.x + 2, y: credits.scale.y + 2}, 0.33, {ease: FlxEase.circIn, onComplete: switchState});
 				FlxTween.tween(FlxG.camera, {zoom: 2}, 0.33, {ease: FlxEase.circIn});
-				
+
 			case 7:
 				FlxTween.tween(options.scale, {x: options.scale.x + 2, y: options.scale.y + 2}, 0.33, {ease: FlxEase.circIn, onComplete: switchState});
 				FlxTween.tween(FlxG.camera, {zoom: 2}, 0.33, {ease: FlxEase.circIn});
-				
 		}
 	}
 
@@ -282,7 +268,6 @@ class MainMenuState extends MusicBeatState
 		FlxTween.tween(mods, {alpha: 1, x: 10}, 0.8, {ease: FlxEase.circOut});
 		FlxTween.tween(awards, {alpha: 1, x: 10}, 0.8, {ease: FlxEase.circOut});
 		FlxTween.tween(credits, {alpha: 1, x: 10}, 0.8, {ease: FlxEase.circOut});
-		//FlxTween.tween(donate, {alpha: 1, x: 10}, 0.8, {ease: FlxEase.circOut});
 		FlxTween.tween(options, {alpha: 1, x: 10}, 0.8, {ease: FlxEase.circOut});
 	}
 
@@ -291,7 +276,8 @@ class MainMenuState extends MusicBeatState
 		if (FlxG.sound.music.volume < 0.8)
 		{
 			FlxG.sound.music.volume += 0.5 * FlxG.elapsed;
-			if(FreeplayState.vocals != null) FreeplayState.vocals.volume += 0.5 * elapsed;
+			if (FreeplayState.vocals != null)
+				FreeplayState.vocals.volume += 0.5 * elapsed;
 		}
 
 		var lerpVal:Float = CoolUtil.boundTo(elapsed * 7.5, 0, 1);
@@ -329,7 +315,8 @@ class MainMenuState extends MusicBeatState
 					selectedSomethin = true;
 					FlxG.sound.play(Paths.sound('confirmMenu'));
 
-					if(ClientPrefs.flashing) FlxFlicker.flicker(magenta, 1.1, 0.15, false);
+					if (ClientPrefs.flashing)
+						FlxFlicker.flicker(magenta, 1.1, 0.15, false);
 
 					switch (curSelected)
 					{
@@ -339,7 +326,6 @@ class MainMenuState extends MusicBeatState
 							FlxTween.tween(mods, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(awards, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(credits, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
-							FlxTween.tween(donate, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(options, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							camFollow.setPosition(400, 1);
 
@@ -349,7 +335,6 @@ class MainMenuState extends MusicBeatState
 							FlxTween.tween(mods, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(awards, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(credits, {alpha: 0, y: options.y + 100}, 0.33, {ease: FlxEase.circOut});
-							FlxTween.tween(donate, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(options, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							camFollow.setPosition(400, 65);
 
@@ -359,7 +344,6 @@ class MainMenuState extends MusicBeatState
 							FlxTween.tween(mods, {x: mods.x + 440}, 0.5, {ease: FlxEase.circOut, onComplete: secondTween});
 							FlxTween.tween(awards, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(credits, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
-							FlxTween.tween(donate, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(options, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							camFollow.setPosition(400, 130);
 
@@ -369,7 +353,6 @@ class MainMenuState extends MusicBeatState
 							FlxTween.tween(mods, {alpha: 0, y: storyMode.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(awards, {x: awards.x + 350}, 0.5, {ease: FlxEase.circOut, onComplete: secondTween});
 							FlxTween.tween(credits, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
-							FlxTween.tween(donate, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(options, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							camFollow.setPosition(400, 195);
 
@@ -379,7 +362,6 @@ class MainMenuState extends MusicBeatState
 							FlxTween.tween(mods, {alpha: 0, y: storyMode.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(awards, {alpha: 0, y: storyMode.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(credits, {x: credits.x + 285}, 0.5, {ease: FlxEase.circOut, onComplete: secondTween});
-							FlxTween.tween(donate, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(options, {alpha: 0, y: options.y + 10}, 0.33, {ease: FlxEase.circOut});
 							camFollow.setPosition(400, 240);
 
@@ -389,10 +371,8 @@ class MainMenuState extends MusicBeatState
 							FlxTween.tween(mods, {alpha: 0, y: storyMode.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(awards, {alpha: 0, y: storyMode.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(credits, {alpha: 0, y: storyMode.y - 10}, 0.33, {ease: FlxEase.circOut});
-							FlxTween.tween(donate, {alpha: 0, y: storyMode.y - 10}, 0.33, {ease: FlxEase.circOut});
 							FlxTween.tween(options, {x: options.x + 340}, 0.5, {ease: FlxEase.circOut, onComplete: secondTween});
 							camFollow.setPosition(400, 390);
-
 					}
 				}
 			}
@@ -408,7 +388,7 @@ class MainMenuState extends MusicBeatState
 			{
 				curSelected = 1;
 				storyMode.animation.play('selected');
-				camFollow.setPosition(storyMode.getGraphicMidpoint().x - 90, 1); //don't ask me why this specific one has to be the x - 90. i don't know.
+				camFollow.setPosition(storyMode.getGraphicMidpoint().x - 90, 1); // don't ask me why this specific one has to be the x - 90. i don't know.
 			}
 			else if (curSelected == 0)
 			{
@@ -419,7 +399,6 @@ class MainMenuState extends MusicBeatState
 		}
 
 		super.update(elapsed);
-
 	}
 
 	function changeItem(huh:Int = 0)
@@ -431,39 +410,37 @@ class MainMenuState extends MusicBeatState
 		mods.animation.play('idle');
 		awards.animation.play('idle');
 		credits.animation.play('idle');
-		//donate.animation.play('idle');
 		options.animation.play('idle');
 
 		switch (curSelected)
 		{
 			case 1:
 				storyMode.animation.play('selected');
-				camFollow.setPosition(storyMode.getGraphicMidpoint().x - 90, 1); //don't ask me why this specific one has to be the x - 90. i don't know.
+				camFollow.setPosition(storyMode.getGraphicMidpoint().x - 90, 1); // don't ask me why this specific one has to be the x - 90. i don't know.
 
 			case 2:
 				freeplay.animation.play('selected');
 				camFollow.setPosition(storyMode.getGraphicMidpoint().x, 65);
-				
+
 			case 3:
 				mods.animation.play('selected');
 				camFollow.setPosition(storyMode.getGraphicMidpoint().x, 130);
-					
+
 			case 4:
 				awards.animation.play('selected');
 				camFollow.setPosition(storyMode.getGraphicMidpoint().x, 195);
-						
+
 			case 5:
 				credits.animation.play('selected');
 				camFollow.setPosition(storyMode.getGraphicMidpoint().x, 240);
-							
+
 			case 6:
 				credits.animation.play('selected');
 				camFollow.setPosition(storyMode.getGraphicMidpoint().x, 325);
-						
+
 			case 7:
 				options.animation.play('selected');
 				camFollow.setPosition(storyMode.getGraphicMidpoint().x, 390);
-							
 		}
 	}
 }
