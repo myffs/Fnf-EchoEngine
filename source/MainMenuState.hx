@@ -180,27 +180,6 @@ class MainMenuState extends MusicBeatState
 		introTimer = new FlxTimer();
 		introTimer.start(0.5);
 
-	/*	for (i in 0...optionShit.length)
-		{
-			var offset:Float = 108 - (Math.max(optionShit.length, 4) - 4) * 80;
-			var menuItem:FlxSprite = new FlxSprite(0, (i * 140)  + offset);
-			menuItem.scale.x = scale;
-			menuItem.scale.y = scale;
-			menuItem.frames = Paths.getSparrowAtlas('mainmenu/menu_' + optionShit[i]);
-			menuItem.animation.addByPrefix('idle', optionShit[i] + " basic", 24);
-			menuItem.animation.addByPrefix('selected', optionShit[i] + " white", 24);
-			menuItem.animation.play('idle');
-			menuItem.ID = i;
-			menuItem.screenCenter(X);
-			menuItems.add(menuItem);
-			var scr:Float = (optionShit.length - 4) * 0.135;
-			if(optionShit.length < 6) scr = 0;
-			menuItem.scrollFactor.set(0, scr);
-			menuItem.antialiasing = ClientPrefs.globalAntialiasing;
-			//menuItem.setGraphicSize(Std.int(menuItem.width * 0.58));
-			menuItem.updateHitbox();
-		} */
-
 		FlxG.camera.follow(camFollowPos, null, 1);
 
 		var versionShit:FlxText = new FlxText(12, FlxG.height - 64, 0, "Echo Engine v" + echoEngineVersion, 12);
@@ -215,8 +194,6 @@ class MainMenuState extends MusicBeatState
 		versionShit.scrollFactor.set();
 		versionShit.setFormat("VCR OSD Mono", 16, FlxColor.WHITE, LEFT, FlxTextBorderStyle.OUTLINE, FlxColor.BLACK);
 		add(versionShit);
-
-		// NG.core.calls.event.logEvent('swag').send();
 
 		changeItem();
 
@@ -247,25 +224,20 @@ class MainMenuState extends MusicBeatState
 
 	var selectedSomethin:Bool = false;
 
-		function switchState(_)
+	function switchState(_)
 	{
 		switch (curSelected)
 		{
 			case 1:
 				MusicBeatState.switchState(new StoryMenuState());
-
 			case 2:
 				MusicBeatState.switchState(new FreeplayState());
-					
 			case 3:
 				MusicBeatState.switchState(new ModsMenuState());
-				
 			case 4:
 				MusicBeatState.switchState(new AchievementsMenuState());
-				
 			case 5:
-				MusicBeatState.switchState(new AmongCreditsState());
-				
+				MusicBeatState.switchState(new CreditsState());
 			case 7:
 				LoadingState.loadAndSwitchState(new options.OptionsState());
 				
