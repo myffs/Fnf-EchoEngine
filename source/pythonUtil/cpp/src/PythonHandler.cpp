@@ -9,7 +9,12 @@ void doFile(const char *str)
 {
     py::scoped_interpreter guard{};
     py::object scope = py::module_::import("__main__").attr("__dict__");
-    py::eval_file(str, scope);
+    try {
+        py::eval_file(str, scope);
+    }
+    catch (const std::exception &e) {
+        cout << "Horrible error: " << e.what() << endl;
+    }
 }
 
 void callNative(const char * strclbk)
