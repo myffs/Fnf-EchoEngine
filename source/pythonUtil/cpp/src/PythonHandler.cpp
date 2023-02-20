@@ -13,7 +13,7 @@ void doFile(const char *str)
         py::eval_file(str, scope);
     }
     catch (const std::exception &e) {
-        cout << "Horrible error: " << e.what() << endl;
+        std::cout << "Horrible error: " << e.what() << std::endl;
     }
 }
 

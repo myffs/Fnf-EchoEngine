@@ -12,5 +12,8 @@ extern class Python
 {
 	@:native("doFile")
 	public static function doFile(str:String):Void;
+
+	@:native('callNative')
+	public static function callNative(strclbk):Void;
 }
 #end
