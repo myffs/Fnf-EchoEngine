@@ -1,0 +1,9 @@
+{
+ "Achievement" : [
+  {
+     "AchievementName" : "You got the Beep of it!",
+     "AchievementDiscription" : "Beat tutorial with no misses",
+     "AchievementImage" : "tut_no_miss",
+       } 
+    ]
+}
