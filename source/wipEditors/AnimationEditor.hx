@@ -1,5 +1,6 @@
 package wipEditors;
 
+// REMINDER THIS IS STILL WIP
 class AnimationEditor extends MusicBeatState
 {
     var boyfriend:Boyfriend;
@@ -8,13 +9,5 @@ class AnimationEditor extends MusicBeatState
 
     public function new(){
         super();
-    }
-
-    inline function getCharX(char:Character):Null<Float> {
-        return (char != null) ? char.x : null;
-    }
-
-    inline function getCharY(char:Character):Null<Float> {
-        return (char != null) ? char.y : null;
     }
 }
