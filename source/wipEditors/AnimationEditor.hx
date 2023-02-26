@@ -1,6 +1,7 @@
 package wipEditors;
 
-class AnimationEditor extends MusicBeatState{
+class AnimationEditor extends MusicBeatState
+{
     var boyfriend:Boyfriend;
     var dad:Character;
     var gf:Character;
