@@ -49,6 +49,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 
+		var option:Option = new Option('MultiPlayer',
+			'If checked, this will enable a mutilplayer mode\n( CURRENTLY EXPERIMEMTAL )',
+			'multiPlayer',
+			'bool',
+			false);
+		addOption(option);
+		
 		var option:Option = new Option('Opponent Notes',
 			'If unchecked, opponent notes get hidden.',
 			'opponentStrums',
@@ -127,7 +134,7 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.maxValue = 135;
 		addOption(option);
 
-		var option:Option = new Option('Safe Frames',
+		var option:Option = new Option('Saftey Frames',
 			'Changes how many frames you have for\nhitting a note earlier or late.',
 			'safeFrames',
 			'float',
