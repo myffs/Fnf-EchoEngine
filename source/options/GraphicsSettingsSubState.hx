@@ -73,15 +73,17 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		option.displayFormat = '%v FPS';
 		option.onChange = onChangeFramerate;
 		#end
-
-		super();
-		//i kinda forgot this so i'll try to wrap my head around it l:----0000
+		
+			//i kinda forgot this so i'll try to wrap my head around it l:----0000
 		var option:Option = new Option('Cat Mode', //Name
 			'If Checked, It does some shit with the notes ( i forgot )', //Description
 			'catMode', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
+		
+		super();
+
 
 		
 	}
