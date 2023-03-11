@@ -76,9 +76,9 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 
 		super();
 		//i kinda forgot this so i'll try to wrap my head around it l:----0000
-		var option:Option = new Option('Low Quality', //Name
-			'If checked, disables some background details,\ndecreases loading times and improves performance.', //Description
-			'lowQuality', //Save data variable name
+		var option:Option = new Option('Cat Mode', //Name
+			'If Checked, It does some shit with the notes ( i forgot )', //Description
+			'catMode', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
