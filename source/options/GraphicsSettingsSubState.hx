@@ -75,6 +75,15 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		#end
 
 		super();
+		//i kinda forgot this so i'll try to wrap my head around it l:----0000
+		var option:Option = new Option('Low Quality', //Name
+			'If checked, disables some background details,\ndecreases loading times and improves performance.', //Description
+			'lowQuality', //Save data variable name
+			'bool', //Variable type
+			false); //Default value
+		addOption(option);
+
+		
 	}
 
 	function onChangeAntiAliasing()
