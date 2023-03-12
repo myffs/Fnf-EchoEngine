@@ -2814,10 +2814,6 @@ class PlayState extends MusicBeatState
 
 	override public function update(elapsed:Float)
 	{
-		/*if (FlxG.keys.justPressed.NINE)
-		{
-			iconP1.swapOldIcon();
-		}*/
 		callOnLuas('onUpdate', [elapsed]);
 
 		switch (curStage)
@@ -3043,8 +3039,6 @@ class PlayState extends MusicBeatState
 				{
 					songTime = (songTime + Conductor.songPosition) / 2;
 					Conductor.lastSongPos = Conductor.songPosition;
-					// Conductor.songPosition += FlxG.elapsed * 1000;
-					// trace('MISSED FRAME');
 				}
 
 				if(updateTime) {
@@ -3062,8 +3056,6 @@ class PlayState extends MusicBeatState
 						timeTxt.text = FlxStringUtil.formatTime(secondsTotal, false);
 				}
 			}
-
-			// Conductor.lastSongPos = FlxG.sound.music.time;
 		}
 
 		if (camZooming)
@@ -3110,7 +3102,6 @@ class PlayState extends MusicBeatState
 					keyShit();
 				} else if(boyfriend.animation.curAnim != null && boyfriend.holdTimer > Conductor.stepCrochet * (0.0011 / FlxG.sound.music.pitch) * boyfriend.singDuration && boyfriend.animation.curAnim.name.startsWith('sing') && !boyfriend.animation.curAnim.name.endsWith('miss')) {
 					boyfriend.dance();
-					//boyfriend.animation.curAnim.finish();
 				}
 
 				if(startedCountdown)
@@ -3134,15 +3125,9 @@ class PlayState extends MusicBeatState
 						strumAlpha *= daNote.multAlpha;
 
 						if (strumScroll) //Downscroll
-						{
-							//daNote.y = (strumY + 0.45 * (Conductor.songPosition - daNote.strumTime) * songSpeed);
 							daNote.distance = (0.45 * (Conductor.songPosition - daNote.strumTime) * songSpeed * daNote.multSpeed);
-						}
 						else //Upscroll
-						{
-							//daNote.y = (strumY - 0.45 * (Conductor.songPosition - daNote.strumTime) * songSpeed);
 							daNote.distance = (-0.45 * (Conductor.songPosition - daNote.strumTime) * songSpeed * daNote.multSpeed);
-						}
 
 						var angleDir = strumDirection * Math.PI / 180;
 						if (daNote.copyAngle)
@@ -3267,6 +3252,10 @@ class PlayState extends MusicBeatState
 
 	inline function catSortShit(piss:FlxTypedGroup<Dynamic>, e:Bool = false){
 		return piss.remove(e);
+	}
+
+	inline function catSortReal(toSort:FlxTypedGroup<Dynamic>, shit:FlxSort, b:FlxSort){
+		return toSort.sort(shit, b);
 	}
 
 	function openPauseMenu()
