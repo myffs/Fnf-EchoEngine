@@ -4247,15 +4247,7 @@ class PlayState extends MusicBeatState
 							catNotes.add(daNote);
 
 							if (catSection != null){
-								for (section in catSection){
-									for (songNotes in section.sectionNotes){
-										var daNoteData:Int = Std.int(songNotes[1] % 4);
-										catNotes.forEachAlive((note:Note) ->{
-											if (daNoteData > -1)
-												songNotes.add(note); // TODO: maybe make this less complicated
-										});
-									}
-								}
+								addCatNote();
 							}
 						}
 					});
@@ -4349,6 +4341,16 @@ class PlayState extends MusicBeatState
 				spr.resetAnim = 0;
 			}
 			callOnLuas('onKeyPress', [key]);
+		}
+	}
+
+	inline function addCatNote(){
+		for (section in catSection){
+			for (songNotes in section.sectionNotes){
+				catNotes.forEachAlive((note:Note) ->{
+					songNotes.add(note); // TODO: maybe make this less complicated
+				});
+			}
 		}
 	}
 
