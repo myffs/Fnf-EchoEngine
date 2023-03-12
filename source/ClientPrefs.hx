@@ -33,8 +33,12 @@ class ClientPrefs {
 	public static var checkForUpdates:Bool = true;
 	public static var comboStacking = true;
 	public static var catMode = true;
-	public static var multiPlayer = true;// hey memehoovy am i gonna have to code this in?
+	public static var multiPlayer = true;
+	// hey memehoovy am i gonna have to code this in?
+	// there already is multiplayer fnf
 	public static var androidPort = true;
+	// you need to add a lot of android stuff here
+	// it's not as easy as adding an option
 	public static var gameplaySettings:Map<String, Dynamic> = [
 		'scrollspeed' => 1.0,
 		'scrolltype' => 'multiplicative', 
