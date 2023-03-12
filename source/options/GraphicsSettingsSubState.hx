@@ -74,18 +74,15 @@ class GraphicsSettingsSubState extends BaseOptionsMenu
 		option.onChange = onChangeFramerate;
 		#end
 		
-			//i kinda forgot this so i'll try to wrap my head around it l:----0000
+		//i kinda forgot this so i'll try to wrap my head around it l:----0000
 		var option:Option = new Option('Cat Mode', //Name
-			'If Checked, It does some shit with the notes ( i forgot )', //Description
+			'If Checked, It allows you to chart a song without being in the chart editor', //Description
 			'catMode', //Save data variable name
 			'bool', //Variable type
 			false); //Default value
 		addOption(option);
 		
 		super();
-
-
-		
 	}
 
 	function onChangeAntiAliasing()

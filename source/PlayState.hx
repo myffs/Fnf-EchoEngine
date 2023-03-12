@@ -315,6 +315,8 @@ class PlayState extends MusicBeatState
 
 	public var catNotes:FlxTypedGroup<Note>;
 
+	public var catSection:Array<SwagSection> = [];
+
 	private var tempKeyShit:KeyboardEvent;
 
 	public function new(?tempKeyShit:KeyboardEvent){
@@ -2397,6 +2399,8 @@ class PlayState extends MusicBeatState
 		// NEW SHIT
 		noteData = SONG.notes;
 
+		catSection = Reflect.copy(noteData);
+
 		var songName:String = Paths.formatToSongPath(SONG.song);
 		var file:String = Paths.json(songName + '/events');
 		#if MODS_ALLOWED
@@ -3910,7 +3914,6 @@ class PlayState extends MusicBeatState
 					}
 					MusicBeatState.switchState(new StoryMenuState());
 
-					// if ()
 					if(!ClientPrefs.getGameplaySetting('practice', false) && !ClientPrefs.getGameplaySetting('botplay', false)) {
 						StoryMenuState.weekCompleted.set(WeekData.weeksList[storyWeek], true);
 
@@ -4041,9 +4044,6 @@ class PlayState extends MusicBeatState
 	private function popUpScore(note:Note = null):Void
 	{
 		var noteDiff:Float = Math.abs(note.strumTime - Conductor.songPosition + ClientPrefs.ratingOffset);
-		//trace(noteDiff, ' ' + Math.abs(note.strumTime - Conductor.songPosition));
-
-		// boyfriend.playAnim('hey');
 		vocals.volume = 1;
 
 		var placement:String = Std.string(combo);
@@ -4051,7 +4051,6 @@ class PlayState extends MusicBeatState
 		var coolText:FlxText = new FlxText(0, 0, 0, placement, 32);
 		coolText.screenCenter();
 		coolText.x = FlxG.width * 0.35;
-		//
 
 		var rating:FlxSprite = new FlxSprite();
 		var score:Int = 350;
@@ -4195,7 +4194,6 @@ class PlayState extends MusicBeatState
 			numScore.velocity.x = FlxG.random.float(-5, 5) * playbackRate;
 			numScore.visible = !ClientPrefs.hideHud;
 
-			//if (combo >= 10 || combo == 0)
 			if(showComboNum)
 				insert(members.indexOf(strumLineNotes), numScore);
 
@@ -4211,13 +4209,8 @@ class PlayState extends MusicBeatState
 			if(numScore.x > xThing) xThing = numScore.x;
 		}
 		comboSpr.x = xThing + 50;
-		/*
-			trace(combo);
-			trace(seperatedScore);
-		 */
 
 		coolText.text = Std.string(seperatedScore);
-		// add(coolText);
 
 		FlxTween.tween(rating, {alpha: 0}, 0.2 / playbackRate, {
 			startDelay: Conductor.crochet * 0.001 / playbackRate
@@ -4244,7 +4237,7 @@ class PlayState extends MusicBeatState
 		// cat mode bs
 		// unfinished atm
 		// I FORGOT TO FINISHHHHHHHH
-		if (catMode){
+		if (catMode && ClientPrefs.catMode){
 			var eventKey:FlxKey = tempKeyShit.keyCode;
 			final keyCodes = [1,2,3,4,5,6,7,8,9];
 			for (i in 0...keysArray.length) {
@@ -4252,8 +4245,19 @@ class PlayState extends MusicBeatState
 					notes.forEachAlive(function(daNote:Note){
 						if (daNote.noteData > -1 && daNote.noteData == cast getKeyFromEvent(tempKeyShit.keyCode)) {
 							catNotes.add(daNote);
+
+							if (catSection != null){
+								for (section in catSection){
+									for (songNotes in section.sectionNotes){
+										var daNoteData:Int = Std.int(songNotes[1] % 4);
+										catNotes.forEachAlive((note:Note) ->{
+											if (daNoteData > -1)
+												songNotes.add(note); // TODO: maybe make this less complicated
+										});
+									}
+								}
+							}
 						}
-						else return;
 					});
 				}
 
@@ -4533,16 +4537,6 @@ class PlayState extends MusicBeatState
 			RecalculateRating(true);
 
 			FlxG.sound.play(Paths.soundRandom('missnote', 1, 3), FlxG.random.float(0.1, 0.2));
-			// FlxG.sound.play(Paths.sound('missnote1'), 1, false);
-			// FlxG.log.add('played imss note');
-
-			/*boyfriend.stunned = true;
-
-			// get stunned for 1/60 of a second, makes you able to
-			new FlxTimer().start(1 / 60, function(tmr:FlxTimer)
-			{
-				boyfriend.stunned = false;
-			});*/
 
 			if(boyfriend.hasMissAnimations) {
 				boyfriend.playAnim(singAnimations[Std.int(Math.abs(direction))] + 'miss', true);
@@ -4869,7 +4863,7 @@ class PlayState extends MusicBeatState
 
 	function killHenchmen():Void
 	{
-		if(!ClientPrefs.lowQuality && ClientPrefs.violence && curStage == 'limo') {
+		if(!ClientPrefs.lowQuality && curStage == 'limo') {
 			if(limoKillingState < 1) {
 				limoMetalPole.x = -400;
 				limoMetalPole.visible = true;
