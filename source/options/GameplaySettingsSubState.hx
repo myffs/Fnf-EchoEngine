@@ -144,6 +144,13 @@ class GameplaySettingsSubState extends BaseOptionsMenu
 		option.maxValue = 10;
 		option.changeValue = 0.1;
 		addOption(option);
+		
+		var option:Option = new Option('Android Port',
+			'If checked, this will enable android port\n( FOR MOBILE DEVICES AND YOU MAY NEED TO RESTART THIS APPLICATION )',
+			'androidPort',
+			'bool',
+			false);
+		addOption(option);
 
 		super();
 	}
