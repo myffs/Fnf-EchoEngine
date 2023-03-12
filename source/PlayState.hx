@@ -3254,8 +3254,8 @@ class PlayState extends MusicBeatState
 		return piss.remove(e);
 	}
 
-	inline function catSortReal(toSort:FlxTypedGroup<Dynamic>, shit:FlxSort, b:FlxSort){
-		return toSort.sort(shit, b);
+	inline function catSortReal(){
+		return catNotes.sort(FlxSort.byY, ClientPrefs.downScroll ? FlxSort.ASCENDING : FlxSort.DESCENDING);
 	}
 
 	function openPauseMenu()
