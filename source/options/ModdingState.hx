@@ -50,3 +50,4 @@ class ModdingState extends BaseOptionsMenu
 
 		super();
 	}
+}
