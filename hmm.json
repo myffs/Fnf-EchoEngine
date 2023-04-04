@@ -36,11 +36,6 @@
       "version": null
     },
     {
-      "name": "tjson",
-      "type": "haxelib",
-      "version": null
-    },
-    {
       "name": "hxjsonast",
       "type": "haxelib",
       "version": null
@@ -80,6 +75,13 @@
       "dir": null,
       "ref": "master",
       "url": "https://github.com/nebulazorua/linc_luajit"
+    },
+    {
+      "name": "flixel-screenshot-plugin",
+      "type": "git",
+      "dir": null,
+      "ref": "master",
+      "url": "https://github.com/sayofthelor/flixel-screenshot-plugin"
     }
   ]
 }
