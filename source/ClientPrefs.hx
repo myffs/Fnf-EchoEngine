@@ -8,6 +8,9 @@ import flixel.graphics.FlxGraphic;
 import Controls;
 
 class ClientPrefs {
+	
+	public static var opponentNoteSplashes:Bool = false;
+	public static var timeBarUi:String = 'Psych';
 	public static var plugins:Bool = false;
 	public static var debugStuff:Bool = false;
 	public static var downScroll:Bool = false;
@@ -142,8 +145,11 @@ class ClientPrefs {
 	}
 
 	public static function saveSettings() {
-		FlxG.save.data.debugStuff = downScroll;
-		FlxG.save.data.plugins = middleScroll;
+		
+		FlxG.save.data.opponentNoteSplashes = opponentNoteSplashes;
+		FlxG.save.data.timeBarUi = timeBarUi;
+		FlxG.save.data.debugStuff = debugStuff;
+		FlxG.save.data.plugins = plugins;
 		FlxG.save.data.downScroll = downScroll;
 		FlxG.save.data.middleScroll = middleScroll;
 		FlxG.save.data.opponentStrums = opponentStrums;
