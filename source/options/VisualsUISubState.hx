@@ -55,7 +55,7 @@ class VisualsUISubState extends BaseOptionsMenu
 			false);
 		addOption(option);
 		
-		var option:Option = new Option('Time Bar:',
+		var option:Option = new Option('Time Bar Display:',
 			"What should the Time Bar display?",
 			'timeBarType',
 			'string',
@@ -67,8 +67,8 @@ class VisualsUISubState extends BaseOptionsMenu
 		"What should the Time Bar look like?", 
 		'timeBarUi', 
 		'string',
-		'Psych Engine',
-		['Psych Engine', 'Kade Engine']);
+		'Psych',
+		['Psych', 'Kade']);
 	    addOption(option);
 
 		var option:Option = new Option('Flashing Lights',
