@@ -1,3 +1,7 @@
+### DEPRECATION NOTICE
+
+This engine has since been deprecated and is no longer being maintained.
+
 ## Friday Night Funkin' - Echo Engine
 
 ![Untitled58_20221223213728](https://user-images.githubusercontent.com/113801267/209418486-a3782277-29f5-49d6-8396-bde34694e8d1.png)
