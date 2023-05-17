@@ -1,6 +1,6 @@
 ### DEPRECATION NOTICE
-
-This engine has since been deprecated and is no longer being maintained.
+### This engine has since been deprecated and is no longer being maintained.
+### Please stop using the engine in favor of a more better engine. 👍
 
 ## Friday Night Funkin' - Echo Engine
 
